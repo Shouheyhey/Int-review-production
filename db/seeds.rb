@@ -11,5 +11,5 @@ require "csv"
 users_csv = CSV.readlines("db/users.csv")
 users_csv.shift
 users_csv.each do |row|
-  User.create(email: row[1], kanji_name: row[18])
+  User.create(email: row[1])
 end
