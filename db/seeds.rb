@@ -6,7 +6,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#encoding: utf-8
   require "csv"
 
   products_csv = CSV.readlines("db/products.csv")
