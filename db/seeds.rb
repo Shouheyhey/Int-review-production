@@ -14,7 +14,7 @@
     Product.create(title: row[1], image_url: row[2], detail: row[6], open_data: row[7], url: row[8])
   end
 
-  reviews_csv = CSV.readline("db/reviews.csv")
+  reviews_csv = CSV.readlines("db/reviews.csv")
   reviews_csv.shift
   reviews_csv.each do |row|
     Review.create(occupation: row[1], product_id: row[2], created_at: row[3], updated_at: row[4], user_id: row[5], rate: row[6], length: row[7], often: row[8], hourly_wage: row[10], rate_flexibility: row[11], rate_wage: row[12],
