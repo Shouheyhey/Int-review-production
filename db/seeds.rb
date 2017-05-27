@@ -6,11 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-  require "csv"
-
-  products_csv = CSV.readlines("db/products.csv")
-  products_csv.shift
-  products_csv.each do |row|
-    Product.create(title: row[1], image_url: row[2], detail: row[6], open_data: row[7], url: row[8])
-  end
-p1
+#   require "csv"
+#
+#   products_csv = CSV.readlines("db/products.csv")
+#   products_csv.shift
+#   products_csv.each do |row|
+#     Product.create(title: row[1], image_url: row[2], detail: row[6], open_data: row[7], url: row[8])
+#   end
+# p1
