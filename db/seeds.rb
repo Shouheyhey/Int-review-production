@@ -11,5 +11,5 @@
   products_csv = CSV.readlines("db/products.csv")
   products_csv.shift
   products_csv.each do |row|
-    Review.create(title: row[1], image_url: row[2], created_at: row[3], detail: row[4], url: row[5])
+    Review.create(company_name: row[1], image_url: row[2], detail: row[6], open_data: row[7], company_info: row[8])
   end
