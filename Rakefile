@@ -4,3 +4,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 TechReviewSite::Application.load_tasks
+
+require 'heroku_backup_task'
+task :cron do
+  HerokuBackupTask.execute
+end
