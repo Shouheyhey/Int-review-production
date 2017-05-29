@@ -1,6 +1,10 @@
 class CreateReviews < ActiveRecord::Migration
   def change
     create_table :reviews do |t|
+      t.integer :review
+      t.integer :product_id
+      t.timestamps null: false
+      t.integer :user_id
       t.string :occupation
       t.string :length
       t.string :often
@@ -19,9 +23,6 @@ class CreateReviews < ActiveRecord::Migration
       t.text :review_environment
       t.text :review_expectation
       t.text :review_merit
-      t.integer :product_id
-      t.timestamps null: false
-      t.integer :user_id
     end
   end
 end
