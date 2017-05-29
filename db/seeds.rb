@@ -16,6 +16,6 @@
   reviews_csv = CSV.readlines("db/reviews.csv")
   reviews_csv.shift
   reviews_csv.each do |row|
-    Review.create(occupation: row[1],length: row[2], often: row[3], hourly_wage: row[4], rate_flexibility: row[5], rate_wage: row[6],
-    rate_future: row[7], rate_social: row[8], rate_growth: row[9], rate_value: row[10], rate_reccommendation: row[11], review_job: row[12], review_authority: row[13],review_skills: row[14], review_environment: row[15], review_expectation: row[16],review_merit: row[17], review_training: row[18])
+    Review.create(review: row[1], product_id: row[2], created_at: row[3] updated_at: row[4], user_id: row[5], occupation: row[6],length: row[7], often: row[8], hourly_wage: row[9], rate_flexibility: row[10], rate_wage: row[11],
+    rate_future: row[12], rate_social: row[13], rate_growth: row[14], rate_value: row[15], rate_reccommendation: row[16], review_job: row[17], review_authority: row[18],review_skills: row[19], review_environment: row[20], review_expectation: row[21],review_merit: row[21], review_training: row[22])
   end
