@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
       |u| u.permit(registration_params)
     end
   end
-en
+end
+
 
   def current_user
     @current_user ||=User.find_by(id: session[:id])
