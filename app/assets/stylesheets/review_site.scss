@@ -8,6 +8,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: block;
 }
 
+
+.footer_white {
+  overflow: hidden;
+  text-align: center;
+  width: 200px;
+  border: none !important;
+  background-color: white;
+}
+
+/* line 36, /Users/taishi/Desktop/Programing/projects/mooovi/app/assets/stylesheets/review_site.scss */
+.footer_white > li {
+  float: right;
+  width: 100px !important;
+  display: inline-block;
+  border: none !important;
+}
+
 /* line 3, /Users/taishi/Desktop/Programing/projects/mooovi/app/assets/stylesheets/review_site.scss */
 audio, canvas, video {
   display: inline-block;
@@ -306,6 +323,8 @@ img {
   width: 100%;
   table-layout: fixed;
 }
+
+
 
 /* line 3, /Users/taishi/Desktop/Programing/projects/mooovi/app/assets/stylesheets/review_site.scss */
 .stats--bubble .stat__number, .bubble {
@@ -1994,6 +2013,7 @@ Yahoo!Japan Movies CSS for PC
 /* line 17, /Users/taishi/Desktop/Programing/projects/mooovi/app/assets/stylesheets/review_site.scss */
 .icon-search:before {
   content: "\e60f";
+  color:white;
 }
 
 /* line 17, /Users/taishi/Desktop/Programing/projects/mooovi/app/assets/stylesheets/review_site.scss */
@@ -7831,6 +7851,13 @@ label.js-stat-wish, label.js-stat-log, label.js-btn-favorite-theater {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/* line 17, /Users/taishi/Desktop/Programing/projects/mooovi/app/assets/stylesheets/review_site.scss */
+.globalnav__footer {
+  background-color: white;
+  border-top: 1px solid #d7dbe2;
+  text-align: center;
 }
 
 /* line 17, /Users/taishi/Desktop/Programing/projects/mooovi/app/assets/stylesheets/review_site.scss */

@@ -2,7 +2,7 @@
 <html class="pc" lang="ja" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
-      <title>長期・有給インターン口コミサイトInt.review</title>
+      <title>長期・有給インターン口コミサイト イントレビュー</title>
       <link href='http://fonts.googleapis.com/css?family=Signika:700,300,400,600' rel='stylesheet' type='text/css'>
       <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -25,13 +25,13 @@
               <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
               </form>
             </li>
-              <a href = "/users/sign_up">ユーザー登録</a>
-              </li>
-              <li class="entry_button  " style="float:right;">
-              <%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
+              <li class="entry_button" style="float: right">
+                <a href="/products/search">投稿する</a>
               </li>
               <li class="entry_button" style="float:right">
-              <a href = "/users/sign_in">ログイン</a>
+              <a href="/users/<%=current_user%>">マイページ</a>
+              <li class="entry_button  " style="float:right;">
+              <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
               </li>
             </ul>
           </div>
@@ -41,7 +41,7 @@
         <%= yield %>
           <aside class="section">
             <h4 class="text-small hr-bottom--thin no-space-bottom">
-              口コミアクセスランキング
+              <i class="icon-crown color-gray-light"></i>インターン評価ランキング
             </h4>
             <ul class="listview listview--condensed text-small">
               <% @ranking.each.with_index(1) do |product, i| %>
@@ -69,11 +69,20 @@
       </div>
     </div>
   </div>
-
-        <div class="copyright">
-          Copyright (C) 2015  株式会社イントレ Corporation. All Rights Reserved.
-        </div>
       </div>
     </div>
   </body>
+
+  <footer>
+    <div class="globalnav__footer">
+        <ul>
+            <ls class="entry_button"><a href="" style="float:middle">利用規約</ls></a>
+            <ls class="entry_button"><a href="" style="float:middle">"イントレ"について</ls></a>
+            <ls class="entry_button"><a href="" style="float:middle">お問い合わせ</ls></a>
+        </ul>
+        <div class="copyright">
+          Copyright (C) 2015 株式会社イントレ All Rights Reserved.
+        </div>
+    </div>
+  </footer>
 </html>
