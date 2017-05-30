@@ -2,8 +2,8 @@
 <html class="pc" lang="ja" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
-      <title>長期・有給インターン口コミサイト</title>
-      <link href='https://fonts.googleapis.com/css?family=Signika:700,300,400,600' rel='stylesheet' type='text/css'>
+      <title>長期・有給インターン口コミサイトInt.review</title>
+      <link href='http://fonts.googleapis.com/css?family=Signika:700,300,400,600' rel='stylesheet' type='text/css'>
       <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
       <%= csrf_meta_tags %>
@@ -25,21 +25,13 @@
               <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
               </form>
             </li>
-            <!-- レビュー投稿ボタンをヘッダーから削除 -->
-<!--               <li class="entry_button" style="float: right">
+              <li class="entry_button" style="float: right">
                 <a href="/products/search">投稿する</a>
-              </li> -->
-<!-- マイページボタンをヘッダーから削除 -->
-<!--               <li class="entry_button" style="float:right">
-              <a href="/users/<%=@current_user%>">My Page</a> -->
-              <li class="entry_button" style="float:right">
-              <%= link_to 'ユーザー登録', "/users/sign_up" %>
               </li>
+              <li class="entry_button" style="float:right">
+              <a href="/users/<%=current_user%>">マイページ</a>
               <li class="entry_button  " style="float:right;">
-              <%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
-              </li>
-              <li class="entry_button" style="float:right">
-              <%= link_to 'ログイン', "/users/sign_in" %>
+              <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
               </li>
             </ul>
           </div>
@@ -49,7 +41,7 @@
         <%= yield %>
           <aside class="section">
             <h4 class="text-small hr-bottom--thin no-space-bottom">
-              <i class="icon-crown color-gray-light"></i>人気インターン先ランキング
+              <i class="icon-crown color-gray-light"></i>インターン評価ランキング
             </h4>
             <ul class="listview listview--condensed text-small">
               <% @ranking.each.with_index(1) do |product, i| %>
@@ -72,13 +64,14 @@
               </li>
               <% end %>
             </ul>
+          </aside>
         </div>
       </div>
     </div>
   </div>
 
         <div class="copyright">
-          Copyright (C) 2017  株式会社イントレ All Rights Reserved.
+          Copyright (C) 2015  株式会社イントレ Corporation. All Rights Reserved.
         </div>
       </div>
     </div>

@@ -5,9 +5,15 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:kanji_name, :furigana_name,:birthday, :sex, :address, :university, :department, :culture_or_science,:graduation_year,:company, :others,:rate] )
+  def configure_devise_permitted_parameters
+  registration_params = [:kanji_name, :furigana_name,:birthday, :sex, :address, :university, :department, :culture_or_science,:graduation_year,:company, :others]
+
+  if params[:action] == 'create'
+    devise_parameter_sanitizer.for(:sign_up) do
+      |u| u.permit(registration_params)
+    end
   end
+en
 
   def current_user
     @current_user ||=User.find_by(id: session[:id])
