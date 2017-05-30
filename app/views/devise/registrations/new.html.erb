@@ -6,7 +6,7 @@
         <h2>Int.review<span>新規登録</span></h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <!-- <%= devise_error_messages! %> -->
+          <%= devise_error_messages! %>
 
           <div class="label"><%= f.label :'氏名(＊必須)'%><br />
           <%= f.text_field :kanji_name, autodocus:true, :placeholder => '氏名をフルネームで入力してください'%></div>

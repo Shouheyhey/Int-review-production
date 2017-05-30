@@ -16,12 +16,12 @@ class ApplicationController < ActionController::Base
 end
 
 
-  def current_user
-    @current_user ||=User.find_by(id: session[:id])
-  end
-  helper_method :current_user
-
-  def after_sign_out_path_for(resources)
-    '/users/sign_in'
-  end
-end
+#   def current_user
+#     @current_user ||=User.find_by(id: session[:id])
+#   end
+#   helper_method :current_user
+#
+#   def after_sign_out_path_for(resources)
+#     '/users/sign_in'
+#   end
+# end
