@@ -25,13 +25,19 @@
               <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
               </form>
             </li>
-              <li class="entry_button" style="float: right">
+              <!-- <li class="entry_button" style="float: right">
                 <a href="/products/search">投稿する</a>
+              </li> -->
+              <!-- <li class="entry_button" style="float:right">
+              <a href="/users/<%=current_user%>">マイページ</a> -->
+              <li class="entry_button" style="float:right">
+              <%= link_to 'ユーザー登録', "/users/sign_up" %>
+              </li>
+              <li class="entry_button  " style="float:right;">
+              <%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
               </li>
               <li class="entry_button" style="float:right">
-              <a href="/users/<%=current_user%>">マイページ</a>
-              <li class="entry_button  " style="float:right;">
-              <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
+              <%= link_to 'ログイン', "/users/sign_in"%>
               </li>
             </ul>
           </div>
