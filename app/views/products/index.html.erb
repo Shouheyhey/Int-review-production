@@ -13,40 +13,40 @@
             <ul class="thumbnails thumbnail--movies row grid1 js-lazy-load-images js-my-check-stats" id="list-module">
               <% @products.each do |product| %>
                 <li class="col">
-                    <div class="bs-callout bs-callout-danger">
-                      <table class="table table-striped table-responsive ">
-                        <thead>
-                          <th>
-                            <a href="/products/<%=product.id %>">
-                          <h3 class="text-large" title="<%= product.title %>">
-                          <%= product.title %>
-                            </h3>
-                            <a href="/products/<%= product.id %>" title="<%= product.title %>" style="float:right;">
-                                <i class="icon-chevron-right color-sub"></i>
-                            </a>
-                            <div class="thumbnail__caption">
-                               <% if product.reviews.present? %>
-                              <div class ="rating-area">
-                                総合評価:
-                               <span class="rating-star">
-                               <i class="star-actived rate-<%= product.review_average %>0"></i>
-                               </span>
-                             </div>
-                                  <% else %>
-                                <span class="rating-star">
-                                  <i class="star-actived rate-0"></i>
-                                </span>
-                                <% end %>
-                            </div>
-                        </th>
-                      </thead>
-                        <tbody>
-                          <tr>
-                            <td class = "col10 text-break text-small"><%=product.detail%></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                    <div class="bs-callout bs-callout-danger"  style="padding-bottom: 40px;">
+                              <table class="table table-striped table-responsive ">
+                                <thead>
+                                  <a href="/products/<%=product.id %>">
+                                    <h2 class="text-xlarge" title="<%= product.title %>">
+                                    <%= product.title %>
+                                    </h2>
+                                    <!-- <a href="/products/<%= product.id %>" title="<%= product.title %>" style="float:right;">
+                                        <i class="icon-chevron-right color-sub"></i>
+                                    </a> -->
+                                    <a class="listview__element--right-icon" href="/products/<%= product.id %>" title="<%= product.title %>">
+                                      <div class="position-right p1em">
+                                        <i class="icon-chevron-right color-sub"></i>
+                                      </div>
+                                      </a
+                                       <% if product.reviews.present? %>
+                                      <div class ="rating-area">
+                                        総合評価:
+                                       <span class="rating-star">
+                                       <i class="star-actived rate-<%= product.review_average %>0"></i>
+                                       </span>
+                                     </div>
+                                          <% else %>
+                                        <span class="rating-star">
+                                          <i class="star-actived rate-0"></i>
+                                        </span>
+                                        <% end %>
+                              </thead>
+                              </table>
+                              <div class="margin">
+                              <a style="color:black;" href="/products/<%=product.id %>">
+                            <p class = "col10 text-overflow text-xsmall"><%=product.detail%></p></a>
+                          </div>
+                          </div>
                 </li>
               <% end %>
             </ul>
