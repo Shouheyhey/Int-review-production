@@ -214,6 +214,7 @@ DEPENDENCIES
   lazy_high_charts
   mechanize
   mysql2 (= 0.3.18)
+  nokogiri
   paperclip
   pry-rails
   rails (= 4.2.5)

@@ -42,6 +42,9 @@ end
 # gem 'debugger', group: [:development, :test]
 
 # pry
+
+gem 'nokogiri'
+
 gem 'pry-rails'
 
 gem 'mechanize'
