@@ -24,4 +24,5 @@ end
 #   def after_sign_out_path_for(resources)
 #     '/users/sign_in'
 #   end
+
 end
