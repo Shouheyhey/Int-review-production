@@ -139,7 +139,6 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     netrc (0.10.3)
-    nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     ntlm-http (0.1.1)
     orm_adapter (0.5.0)

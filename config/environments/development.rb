@@ -14,15 +14,6 @@ TechReviewSite::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.smtp_settings = {
-  :enable_starttls_auto => true,
-  :address => "smtp.gmail.com",
-  :port => 587,
-  :domain => 'smtp.gmail.com',
-  :user_name => "int.review.jp@gmail.com", #gmailアドレス
-  :password => "intre0123", #gmailパスワード
-  :authentication => 'login',
-}
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options   = { host: 'us-cdbr-iron-east-03.cleardb.net' }
   config.action_mailer.delivery_method = :letter_opener
@@ -35,16 +26,9 @@ TechReviewSite::Application.configure do
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
-<<<<<<< HEAD
   # number of complex assets.
-  config.assets.debug = true
 
-  config.action_mailer.default_url_options = { host: 'us-cdbr-iron-east-03.cleardb.net' }
-  config.action_mailer.delivery_method = :letter_opener
-=======
   # number of complex assets.  config.assets.debug = true
->>>>>>> e1b43935e2dd65c8d85497702610cb6aa8971a5f
-
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
   config.assets.precompile += %w( .svg .eot .woff .ttf )
 
