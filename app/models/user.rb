@@ -15,5 +15,6 @@ has_many :reviews
   validates :graduation_year, presence: true
   validates :birthday, presence: true
 
+attr_accessor :login
 
 end
