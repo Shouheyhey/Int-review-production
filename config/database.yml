@@ -13,6 +13,7 @@ development:
   encoding: utf8
   pool: 5
   username: root
+  database: Intreview_development
   password: 'Shouheyhey0524'
   socket: /tmp/mysql.sock
 
@@ -31,7 +32,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: mooovi_production
+  database: heroku_5f7e1e9f1f9590f
   pool: 5
   username: root
   password:
