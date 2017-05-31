@@ -60,5 +60,3 @@ gem 'lazy_high_charts'
 group :production do
   gem 'rails_12factor'
 end
-
-gem 'heroku_backup_task'
