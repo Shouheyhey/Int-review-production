@@ -59,3 +59,7 @@ group :production do
 end
 
 gem 'heroku_backup_task'
+
+group :development do
+  gem 'letter_opener'
+end
