@@ -15,6 +15,8 @@ TechReviewSite::Application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { host: 'us-cdbr-iron-east-03.cleardb.net' }
+  config.action_mailer.delivery_method = :letter_opener
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -29,6 +31,4 @@ TechReviewSite::Application.configure do
 
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
   config.assets.precompile += %w( .svg .eot .woff .ttf )
-
-  config.action_mailer.default_url_options = { host: 'us-cdbr-iron-east-03.cleardb.net'}
 end
