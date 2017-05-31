@@ -124,13 +124,10 @@ GEM
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
     method_source (0.8.2)
-<<<<<<< HEAD
     mime-types (1.25.1)
-=======
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
->>>>>>> d07682e74ada0cef122743a8d67b0f34d52a1d52
     mimemagic (0.3.0)
     mini_portile2 (2.1.0)
     minitest (5.10.2)
@@ -138,13 +135,10 @@ GEM
     mysql2 (0.3.18)
     net-http-digest_auth (1.4.1)
     net-http-persistent (2.9.4)
-<<<<<<< HEAD
     net-ssh (2.9.2)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     netrc (0.10.3)
-=======
->>>>>>> d07682e74ada0cef122743a8d67b0f34d52a1d52
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     ntlm-http (0.1.1)

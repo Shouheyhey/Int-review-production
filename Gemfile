@@ -42,6 +42,9 @@ end
 # gem 'debugger', group: [:development, :test]
 
 # pry
+
+gem 'nokogiri'
+
 gem 'pry-rails'
 
 gem 'mechanize'
@@ -58,8 +61,11 @@ group :production do
   gem 'rails_12factor'
 end
 
+<<<<<<< HEAD
 gem 'heroku_backup_task'
 
+=======
+>>>>>>> e1b43935e2dd65c8d85497702610cb6aa8971a5f
 group :development do
   gem 'letter_opener'
 end

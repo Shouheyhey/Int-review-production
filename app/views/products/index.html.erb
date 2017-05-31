@@ -1,39 +1,57 @@
-  <div id="main_cnt_wrapper">
-    <div id="yjContentsBody">
-      <div class="yjContainer">
-        <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
-        <div id="yjMain">
-          <article class="section">
-            <div class="container">
-              <header class="header header--section">
-                <h1 class="text-middle">
-              インターン先一覧
-            </h1>
-              </header>
-              <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
-                <% @products.each do |product| %>
-                  <li class="col">
-                    <a href="/products/<%= product.id %>"><h3 class="text-xsmall text-overflow" title="<%= product.title %>">
-                        <%= product.title %>
-                      </h3></a>
-                    <div class="thumbnail__caption">
-                      <p class="text-small">
-                       <% if product.reviews.present? %>
-                       <span class="rating-star">
-                       <i class="star-actived rate-<%= product.review_average %>0"></i>
-                       </span>
-                          <% else %>
-                        <span class="rating-star">
-                          <i class="star-actived rate-0"></i>
-                        </span>
-                        <% end %>
-                      </p>
-                    </div>
-                  </li>
-                <% end %>
-              </ul>
-              <%= paginate(@products)%>
-            </div>
-          </article>
-        </div>
-        <div id="yjSub">
+<div id="main_cnt_wrapper">
+  <div id="yjContentsBody">
+    <div class="yjContainer">
+      <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
+      <div id="yjMain">
+        <article class="section">
+          <div class="container">
+            <header class="header header--section">
+              <h1 class="text-xxlarge">
+                企業一覧
+              </h1>
+            </header>
+            <ul class="thumbnails thumbnail--movies row grid1 js-lazy-load-images js-my-check-stats" id="list-module">
+              <% @products.each do |product| %>
+                <li class="col">
+                    <div class="bs-callout bs-callout-danger"  style="padding-bottom: 40px;">
+                              <table class="table table-striped table-responsive ">
+                                <thead>
+                                  <a href="/products/<%=product.id %>">
+                                    <h2 class="text-xlarge" title="<%= product.title %>">
+                                    <%= product.title %>
+                                    </h2>
+                                    <!-- <a href="/products/<%= product.id %>" title="<%= product.title %>" style="float:right;">
+                                        <i class="icon-chevron-right color-sub"></i>
+                                    </a> -->
+                                    <a href="/products/<%= product.id %>" title="<%= product.title %>">
+                                      <div class="position-right p1em">
+                                        <i class="icon-chevron-right color-sub"></i>
+                                      </div>
+                                      </a
+                                       <% if product.reviews.present? %>
+                                      <div class ="rating-area">
+                                        総合評価:
+                                       <span class="rating-star">
+                                       <i class="star-actived rate-<%= product.review_average %>0"></i>
+                                       </span>
+                                     </div>
+                                          <% else %>
+                                        <span class="rating-star">
+                                          <i class="star-actived rate-0"></i>
+                                        </span>
+                                        <% end %>
+                              </thead>
+                              </table>
+                              <div class="margin">
+                              <a style="color:black;" href="/products/<%=product.id %>">
+                            <p class = "col10 text-overflow text-xsmall"><%=product.detail%></p></a>
+                          </div>
+                          </div>
+                </li>
+              <% end %>
+            </ul>
+            <%= paginate(@products)%>
+          </div>
+        </article>
+      </div>
+      <div id="yjSub">
