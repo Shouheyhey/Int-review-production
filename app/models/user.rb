@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 has_many :reviews
 devise :database_authenticatable, :registerable,
        :recoverable, :rememberable, :trackable, :validatable, :confirmable
+
   validates :kanji_name, presence: true
   validates :furigana_name, presence: true
   validates :sex, presence: true

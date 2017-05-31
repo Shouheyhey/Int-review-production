@@ -27,6 +27,9 @@ TechReviewSite::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.action_mailer.default_url_options = { host: 'us-cdbr-iron-east-03.cleardb.net' }
+  config.action_mailer.delivery_method = :letter_opener
+
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
   config.assets.precompile += %w( .svg .eot .woff .ttf )
 end
