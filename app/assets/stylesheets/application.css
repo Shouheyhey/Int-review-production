@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+ .button_list{
+  float:left;z
+ }
+
  .label-default {
      background-color: #5bc0de;
  }

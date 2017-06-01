@@ -40,6 +40,15 @@
                 <h3 style="color: #3b5998;">みんなのレビュー
                 </h3>
               </header>
+              <!-- <div class="button-list">
+              <ul class="button_list">
+                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+              </ul>
+            </div> -->
               <ul style="padding: 0">
               <% @product.reviews.each do |review| %>
                   <div class="thumbnail__caption">
@@ -105,39 +114,39 @@
                       </ul>
                     </div>
 
-                    <div class="bs-callout bs-callout-danger text-middle">
+                    <div class="bs-callout bs-callout-danger text-middle" id="job_cont">
                       <h4>業務内容</h4>
                     <p></span><%= review.review_job%><small 2014=""></small></p>
                   </div>
                   </header>
                   <header>
-                    <div class="bs-callout bs-callout-danger text-middle">
+                    <div class="bs-callout bs-callout-danger text-middle" id ="authority">
                     <h4>与えられている裁量・権限</h4>
                     <p></span><%= review.review_authority%><small 2014=""></small></p>
                   </div>
                   </header>
                   <header>
-                    <div class="bs-callout bs-callout-danger text-middle">
+                    <div class="bs-callout bs-callout-danger text-middle" id="skill">
                       <h4>身につけられるスキル</h4>
                     <p></span><%= review.review_skills%><small 2014=""></small></p>
                   </header>
                   <header>
-                    <div class="bs-callout bs-callout-danger text-middle">
+                    <div class="bs-callout bs-callout-danger text-middle" id="training">
                       <h4>教育体制・面倒見のよさ</h4>
                     <p></span><%= review.review_training%><small 2014=""></small></p>
                   </header>
                   <header>
-                    <div class="bs-callout bs-callout-danger text-middle">
+                    <div class="bs-callout bs-callout-danger text-middle" id="environment">
                     <h4>労働・オフィス環境や雰囲気</h4>
                     <p></span><%= review.review_environment%><small 2014=""></small></p>
                   </header>
                   <header>
-                    <div class="bs-callout bs-callout-danger text-middle">
+                    <div class="bs-callout bs-callout-danger text-middle" id="expectation">
                       <h4>インターンに期待していたこととその実態</h4>
                     <p></span><%= review.review_expectation%><small 2014=""></small></p>
                   </header>
                   <header>
-                    <div class="bs-callout bs-callout-danger text-middle">
+                    <div class="bs-callout bs-callout-danger text-middle" id="merit">
                       <h4>このインターンをするメリット</h4>
                     <p></span><%= review.review_merit%><small 2014=""></small></p>
                   </header>
@@ -148,5 +157,6 @@
             </div>
           </article>
         </div>
+
 
         <div id="yjSub">
