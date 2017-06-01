@@ -12,6 +12,13 @@
  *= require_tree .
  */
 
+ div#footer{
+	background:#DEFF4A;
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
  .label-default {
      background-color: #5bc0de;
  }
