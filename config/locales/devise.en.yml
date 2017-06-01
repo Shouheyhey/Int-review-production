@@ -25,7 +25,7 @@ en:
 #      timeout: 'Your session expired, please sign in again to continue.'
       unauthenticated: 'ログインしてください。'
 #      unauthenticated: 'You need to sign in or sign up before continuing.'
-      unconfirmed: '本登録を行ってください。'
+      unconfirmed: '登録されたメールアドレスにリンクを送付しました。リンクから本登録を行ってください。'
 #      unconfirmed: 'You have to confirm your account before continuing.'
     mailer:
       confirmation_instructions:

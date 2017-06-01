@@ -39,6 +39,8 @@ TechReviewSite::Application.configure do
   #   enable_starttls_auto:  true
   # }
   #
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+   config.assets.compile = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
