@@ -21,15 +21,15 @@
             <li class="search header" style="float:left;position:absolute;top:15px;left:150px;">
                 <%= form_tag('/products/search', method: :get) do %>
                 <input class="search__query header" name="keyword" placeholder="企業名で検索" type="text" value=""><button class="btn-search header" title="検索" type="submit"><i class="icon-search header"></i></button></input>
-              <% end %>
+                <% end %>
               <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
               </form>
             </li>
             <li class="entry_button" style="float:right">
-            <a href = "/users/sign_up">無料登録</a>
+            <%= link_to '無料登録', "/users/sign_up",method: :get %>
             </li>
             <li class="entry_button" style="float:right">
-            <a href ="/users/sign_in">ログイン</a>
+              <%= link_to 'ログイン', "/users/sign_in", method: :get %>
           </li>
             <li class="entry_button" style="float:right">
               <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
