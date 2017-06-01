@@ -1,6 +1,5 @@
 class AddkanjiNameToUsers < ActiveRecord::Migration
   def change
-    def change
       add_column :users, :kanji_name, :string
       add_column :users, :furigana_name, :string
       add_column :users, :birthday, :date
@@ -12,6 +11,5 @@ class AddkanjiNameToUsers < ActiveRecord::Migration
       add_column :users, :graduation_year, :integer
       add_column :users, :company, :string
       add_column :Users, :other, :string
-    end
   end
 end
