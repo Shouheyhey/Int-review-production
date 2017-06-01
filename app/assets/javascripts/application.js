@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
 //= require highcharts/highcharts
 //= require highcharts/highcharts-more
 //= require highcharts/highstock
-
 
 document.addEventListener("turbolinks:load", function() {
   $('#tab-menu li').on('click', function(){
