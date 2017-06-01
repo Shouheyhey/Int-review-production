@@ -27,7 +27,7 @@
               </form>
             </li>
             <li class="entry_button" style="float:right">
-            <%= link_to '無料登録', "/users/sign_up",method: :get %>
+            <%= link_to '新規登録', "/users/sign_up",method: :get %>
             </li>
             <li class="entry_button" style="float:right">
               <%= link_to 'ログイン', "/users/sign_in", method: :get %>
@@ -40,6 +40,9 @@
           </div>
         </nav>
       </div>
+      <!-- <header>
+        <img src="http://intreview.raindrop.jp/wp-content/themes/lighthouse/images/headers/snow-mountains.png">
+      </header> -->
       <div class="bgcolor-white pt1em pb1em" id="contents">
         <%= yield %>
           <aside class="section">
