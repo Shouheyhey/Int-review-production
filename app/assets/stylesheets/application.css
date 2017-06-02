@@ -11,6 +11,47 @@
  *= require_self
  *= require_tree .
  */
+.btn btn-default{
+}
+
+.static_page{
+  width:100%;
+}
+
+.centered_article{
+  padding-top:10%;
+  margin:0 auto;
+  text-align: center;
+}
+
+ .panel-default>.panel-heading {
+     color: #333;
+     background-color: #f5f5f5;
+     border-color: #ddd;
+    border-radius:3px;
+ }
+
+ .panel-heading {
+     padding: 10px 15px;
+     border-bottom: 1px solid transparent;
+     border-top-left-radius: 3px;
+     border-top-right-radius: 3px;
+ }
+
+  .panel {
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+      box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+
+    .panel-default {
+        border-color: #ddd;
+    }
+
+
 
  .bs-glyphicons .glyphicon {
      margin-top: 5px;
