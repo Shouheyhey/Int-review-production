@@ -1,5 +1,4 @@
-TechReviewSite::Application.routes.draw do
-
+IntReviewProduct::Application.routes.draw do
   devise_for :users
   #only: :showでshowのルートを設定する前はどういう状態（devise_forで作れていたかと思っていた、rake routesをすると色々と出ていたから）？(自分でdeviseに元から保存されていること以外のことをするときは設定しないといけないのか)
   resources :abouts, only: :index

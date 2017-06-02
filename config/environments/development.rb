@@ -1,4 +1,4 @@
-TechReviewSite::Application.configure do
+IntReviewProduct::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # トラッキングIDを記載
       # GA.tracker = "UA-100338312-1"
@@ -52,8 +52,6 @@ TechReviewSite::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-
-  number of complex assets.  config.assets.debug = true
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
   config.assets.precompile += %w( .svg .eot .woff .ttf )
 
