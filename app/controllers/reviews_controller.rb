@@ -1,4 +1,4 @@
-class ReviewsController < RankingControllerpp
+class ReviewsController < RankingController
   # 新しいレビュー作成時
   # before_action :authenticate_user!, only: :new
   def new
@@ -11,6 +11,10 @@ class ReviewsController < RankingControllerpp
     Review.create(create_params)
     # トップページにリダイレクトする
     redirect_to controller: :products, action: :index
+  end
+
+  def search
+    @reviews = Review.where('occupation LIKE(?)', "%#{params[:keyword]}%").limit(10)
   end
 
   private
