@@ -1,3 +1,18 @@
+<script>
+
+document.addEventListener("turbolinks:load", function() {
+  $('#tab-menu li').on('click', function(){
+    if($(this).not('selected')){
+      // タブメニュー
+      $(this).addClass('selected').siblings('li').removeClass('selected');
+      // タブの中身
+      var index = $('#tab-menu li').index(this);
+      $('#tab-box div').eq(index).addClass('selected').siblings('div').removeClass('selected');
+    }
+  });
+});
+
+</script>
 
 <div class="bgcolor-white pt1em pb1em" id="contents">  <div id="main_cnt_wrapper">
   <div id="yjContentsBody">
