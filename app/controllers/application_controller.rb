@@ -13,15 +13,16 @@ class ApplicationController < ActionController::Base
     '/users/sign_in'
   end
 
-before_filter :ensure_domain
+  before_filter :ensure_domain
 
- # redirect correct server from herokuapp domain for SEO
-def ensure_domain
- return unless /\.herokuapp.com/ =~ 'int-review.jp'
- # 主にlocalテスト用の対策80と443以外でアクセスされた場合ポート番号をURLに含める
- # port = ":#{443}" unless [80, 443].include?(request.port)
- redirect_to "#{'http://'}#{'int-review.jp'}", status: :moved_permanently
- # パラメタが必要な場合は、request.fullpath、切りたい場合は request.path
-end
+
+  # redirect correct server from herokuapp domain for SEO
+  def ensure_domain
+   return unless /\.herokuapp.com/ =~ request.host
+
+   # 主にlocalテスト用の対策80と443以外でアクセスされた場合ポート番号をURLに含める
+   port = ":#{request.port}" unless [80, 443].include?(request.port)
+   redirect_to "#{request.protocol}#{FQDN}#{port}#{request.fullpath}", status: :moved_permanently
+  end
 
 end
