@@ -9,12 +9,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:kanji_name, :furigana_name,:birthday, :sex, :address, :university, :department, :culture_or_science,:graduation_year,:company, :others,:rate] )
   end
 
-  # def after_sign_out_path_for(resources)
-  #   '/users/sign_in'
-  # end
-
-  def after_sign_up_path_for(resource)
-    '/pages/notification'
+  def after_sign_out_path_for(resources)
+    '/users/sign_in'
   end
 
+  before_filter :ensure_domain
+
+  protected
+  def ensure_domain
+    default_host = Rails.application.routes.default_url_options[:host]
+    if request.host = 'https://salty-eyrie-20337.herokuapp.com/'
+    redirect_to "#{request.protocol}#{default_host}#{request.fullpath}", status: 301
+    end
+  end
 end
