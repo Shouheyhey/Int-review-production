@@ -63,4 +63,6 @@ group :production do
 
 gem 'google-analytics-rails'
 
+gem 'omniauth'
+
 end

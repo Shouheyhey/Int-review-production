@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 has_many :reviews
 devise :database_authenticatable, :registerable,
-       :recoverable, :rememberable, :trackable, :validatable, :confirmable
+       :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
   validates :kanji_name, presence: true
   validates :furigana_name, presence: true
