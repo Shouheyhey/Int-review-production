@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   before_filter :ensure_domain
+  before_filter :deactivate_ssl
 
 
   # redirect correct server from herokuapp domain for SEO
@@ -24,5 +25,10 @@ class ApplicationController < ActionController::Base
    port = ":#{request.port}" unless [80, 443].include?(request.port)
    redirect_to "#{request.protocol}#{FQDN}#{port}#{request.fullpath}", status: :moved_permanently
   end
+
+def deactivate_ssl
+  if(Rail.env.production?) && !(request.ssl?)
+    redirect_to :protocol => "http://", :status => status: :moved_permanently
+end
 
 end
