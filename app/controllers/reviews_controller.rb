@@ -18,6 +18,7 @@ class ReviewsController < RankingController
 
   private
   def create_params
-    params.require(:review).permit(:rate, :review, :occupation, :length, :often, :hourly_wage, :rate_flexibility, :rate_wage, :rate_future,:rate_growth, :rate_social, :rate_value, :rate_reccommendation, :review_job, :review_skills, :review_merit, :review_authority, :review_training, :review_environment, :review_expectation).merge(product_id: params[:product_id], user_id: current_user.id)
-  end
+    params.require(:review).permit(:rate, :review, :occupation, :length, :often, :hourly_wage, :rate_flexibility, :rate_wage, :rate_future,:rate_growth, :rate_social, :rate_value, :rate_reccommendation, :review_job, :review_skills, :review_merit, :review_authority, :review_training, :review_environment, :review_expectation)
+end
+
 end

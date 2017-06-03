@@ -65,4 +65,6 @@ gem 'google-analytics-rails'
 
 gem 'omniauth'
 
+gem 'will_paginate'
+
 end

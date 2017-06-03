@@ -33,8 +33,10 @@
 
           <%= form_for [@review] do |f| %>
           <div style="margin: 8px 0">
-            <%=f.label :インターン先の企業名%><br>
-            <%= f.text_field :review_job %>
+            <%= f.fields_for :products do |product| %>
+                  <%=f.label :インターン先の企業名%><br>
+                  <%= product.text_field :title %>
+            <%end%>
           </div>
           <div style="margin: 8px 0">
             <%= f.label :職種, style: { 'margin-right' => 8 } %><br>
