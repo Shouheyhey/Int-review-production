@@ -13,13 +13,14 @@ class ApplicationController < ActionController::Base
     '/users/sign_in'
   end
 
-  before_filter :ensure_domain
+before_filter :ensure_domain
 
-  protected
-  def ensure_domain
-    default_host = Rails.application.routes.default_url_options[:host]
-    if request.host = 'https://salty-eyrie-20337.herokuapp.com/'
-    redirect_to "#{request.protocol}#{default_host}#{request.fullpath}", status: 301
-    end
-  end
+ # redirect correct server from herokuapp domain for SEO
+def ensure_domain
+ return unless /\.herokuapp.com/ =~ int-review.jp
+
+ # 主にlocalテスト用の対策80と443以外でアクセスされた場合ポート番号をURLに含める
+ port = ":#{request.port}" unless [80, 443].include?(request.port)
+ redirect_to "#{request.protocol}#{FQDN}#{port}#{request.uri}", status: :moved_permanently
+ # パラメタが必要な場合は、request.fullpath、切りたい場合は request.path
 end
