@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-
+  before_filter :ensure_domain
+  before_filter :deactivate_ssls
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
@@ -13,10 +14,6 @@ class ApplicationController < ActionController::Base
     '/users/sign_in'
   end
 
-  before_filter :ensure_domain
-  before_filter :deactivate_ssl
-
-
   # redirect correct server from herokuapp domain for SEO
   def ensure_domain
    return unless /\.herokuapp.com/ =~ request.host
@@ -26,9 +23,10 @@ class ApplicationController < ActionController::Base
    redirect_to "#{request.protocol}#{FQDN}#{port}#{request.fullpath}", status: :moved_permanently
   end
 
-def deactivate_ssl
-  if(Rail.env.production?) && !(request.ssl?)
-    redirect_to :protocol => "http://", status: :moved_permanently
+  def deactivate_ssl
+    if(Rail.env.production?) && !(request.ssl?)
+      redirect_to :protocol => "http://", status: :moved_permanently
+  end
 end
 
 end
