@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def deactivate_ssl
-    if(Rail.env.production?) && !(request.ssl?)
+    if(Rails.env.production?) && !(request.ssl?)
       redirect_to :protocol => "http://", status: :moved_permanently
   end
 end
