@@ -7,21 +7,22 @@ IntReviewProduct::Application.routes.draw do
     :unlocks=>'users/unlocks',
     :omniauth_callbacks=>'users/omniauth_callbacks'
   }
-  
-  get "pages/notification"
+
+  get "pages/new_registration_notification"
+  get "pages/new_post_notification"
   resources :abouts, only: :index
   resources :terms, only: :index
   resources :users, only: :show
   resources :products, only: :show do
     collection do
       get 'search'
-    end
   end
-    resources :reviews, only: [:new, :create] do
+end
+  resources :reviews, only: [:new, :create] do
     collection do
       get 'search'
     end
-  end
+end
   root 'products#index'
 
 end

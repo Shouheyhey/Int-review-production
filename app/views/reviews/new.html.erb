@@ -13,36 +13,141 @@
             <div>
               <ul class="listview js-lazy-load-images">
                 <li style="margin-bottom: 15px">
-                  <a class="listview__element--right-icon" href="#">
                     <div class="box">
                       <div class="box__cell w80">
                         <div class="thumbnail thumbnail--photo">
-                          <div class="thumbnail__figure" style="background-image: url(<%= @product.image_url %>);"></div>
                         </div>
                       </div>
                       <div class="box__cell pl1em">
                         <h3 class="text-middle text-break color-sub">
-                          <%= @product.title %>
                         </h3>
                         <p class="text-xsmall">
                         </p>
                         <p class="text-xsmall opacity-60"></p>
                       </div>
                     </div>
-                  </a>
                 </li>
               </ul>
             </div>
           </div>
 
-          <%= form_for [@product, @review] do |f| %>
+          <%= form_for [@review] do |f| %>
           <div style="margin: 8px 0">
-            <%= f.label :評価, style: { 'margin-right' => 8 } %>
-            <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } %>
+            <%=f.label :インターン先の企業名%><br>
+            <%= f.text_field :review_job %>
           </div>
           <div style="margin: 8px 0">
-            <%= f.text_area :review, placeholder: 'レビューを書いてね！', style: 'width: 100%;height: 300px;' %>
+            <%= f.label :職種, style: { 'margin-right' => 8 } %><br>
+            <%= f.text_field  :occupation, placeholder: 'エンジニア、マーケティング、営業、ビジネス全般など'%>
           </div>
+          <div style="margin: 8px 0">
+            <%= f.label :インターン実施期間, style: { 'margin-right' => 8 } %><br>
+            <%= f.select :length, ["1カ月未満","1カ月~2カ月","3カ月~6カ月","7カ月~11カ月","1年以上2年未満","2年以上"] %>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :勤務頻度（週に何日参加したのかを記入してください。）, style: { 'margin-right' => 8 } %><br>
+            <%= f.select :often, ["週1日未満","週1日~２日","週3日~4日","週5日以上"] %>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :給与（時給換算で記入してください。）, style: { 'margin-right' => 8 } %><br>
+            <%= f.select :hourly_wage, ["無給（交通費なし）","無給(交通費支給）","800円未満","800円~899円","1000円~1099円","1100円~1299円","1300円~1499円","1500円以上"] %>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :企業がシフトや就業日時に柔軟に対応してくれるか？,style: { 'margin-right' => 8 } %><br>
+            <label><%= f.radio_button :rate_flexibility,'2' %>非常に悪い</label>
+            <label><%= f.radio_button :rate_flexibility, '4' %>悪い</label>
+            <label><%= f.radio_button :rate_flexibility,'6' %>普通</label>
+            <label><%= f.radio_button :rate_flexibility,'8' %>柔軟</label>
+            <label><%= f.radio_button :rate_flexibility,'10'%>非常に柔軟</label>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :給与に満足か？（交通費含む）,style: { 'margin-right' => 8 } %><br>
+            <label><%= f.radio_button :rate_wage,'2' %>非常に不満</label>
+            <label><%= f.radio_button :rate_wage, '4' %>不満</label>
+            <label><%= f.radio_button :rate_wage,'6' %>どちらともいえない</label>
+            <label><%= f.radio_button :rate_wage,'8' %>不満</label>
+            <label><%= f.radio_button :rate_wage,'10'%>非常に満足</label>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :インターン先に、将来性と成長度はあるか？,style: { 'margin-right' => 8 } %><br>
+            <label><%= f.radio_button :rate_future,'2' %>非常に低い</label>
+            <label><%= f.radio_button :rate_future, '4' %>低い</label>
+            <label><%= f.radio_button :rate_future,'6' %>普通</label>
+            <label><%= f.radio_button :rate_future,'8' %>高い</label>
+            <label><%= f.radio_button :rate_future,'10'%>非常に高い</label>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :どれくらい成長できるか？,style: { 'margin-right' => 8 } %><br>
+            <label><%= f.radio_button :rate_growth,'2' %>全く成長できない</label>
+            <label><%= f.radio_button :rate_growth, '4' %>あまり成長できない</label>
+            <label><%= f.radio_button :rate_growth,'6' %>普通</label>
+            <label><%= f.radio_button :rate_growth,'8' %>成長できる</label>
+            <label><%= f.radio_button :rate_growth,'10'%>非常に成長できる</label>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :社会に対して貢献したと、どの程度実感したか？,style: { 'margin-right' => 8 } %><br>
+            <label><%= f.radio_button :rate_social,'2' %>全く実感しなかった</label>
+            <label><%= f.radio_button :rate_social, '4' %>あまり実感しなかった</label>
+            <label><%= f.radio_button :rate_social,'6' %>どちらともいえない</label>
+            <label><%= f.radio_button :rate_social,'8' %>少し実感した</label>
+            <label><%= f.radio_button :rate_social,'10'%>強く実感した</label>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :インターンの体験が、就職活動でどの程度活きるか?,style: { 'margin-right' => 8 } %><br>
+            <label><%= f.radio_button :rate_value,'2' %>非常に活きない</label>
+            <label><%= f.radio_button :rate_value, '4' %>活きない</label>
+            <label><%= f.radio_button :rate_value,'6' %>どちらともいえない</label>
+            <label><%= f.radio_button :rate_value,'8' %>活きる</label>
+            <label><%= f.radio_button :rate_value,'10'%>非常に活きる</label>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :親しい友人にどの程度すすめたいと思うか、0から10点で点数をつけてください, style: { 'margin-right' => 8 } %><br>
+            <label><%= f.radio_button :rate_social,'1' %>1</label>
+            <label><%= f.radio_button :rate_social, '2' %>2</label>
+            <label><%= f.radio_button :rate_social,'3' %>3</label>
+            <label><%= f.radio_button :rate_social,'4' %>4</label>
+            <label><%= f.radio_button :rate_social,'5'%>5</label>
+            <label><%= f.radio_button :rate_social,'6' %>6</label>
+            <label><%= f.radio_button :rate_social, '7' %>7</label>
+            <label><%= f.radio_button :rate_social,'8' %>8</label>
+            <label><%= f.radio_button :rate_social,'9' %>9</label>
+            <label><%= f.radio_button :rate_social,'10'%>10</label>
+          </div>
+          <div style="margin: 8px 0">
+            <%=f.label :与えられている裁量・権限%>
+            あなたがインターン中にどのくらいの裁量権を与えられたのかを教えてください。
+            <%= f.text_area :review_job,placeholder:'社員の方と同程度の裁量を与えられた。私は、自社メディアのfacebookマーケティングを担当したが、ターゲット選定から広告予算まで私自らの手で決めることができた。裁量に関しては、他社のインターンよりもかなり大きいものになっていると感じた。' ,style: 'width: 100%;height: 300px;' %>
+          </div>
+          <div style="margin: 8px 0">
+            <%=f.label :業務内容%><br>
+            一日の流れを、具体的な業務内容と時間と共にお書き下さい。
+            <%= f.text_area :review_authority, placeholder:'09:00出社。09:05昨日のfacebook広告の結果をチェック・分析する。10:30新たなfacebook広告を作成し、出稿。12:00社員さんと昼ごはん。13:00Google Analyticsを用いて、サイトに来たユーザーの動きを確認し、ユーザーの回遊時間を長くする施策を考える。15:00社員さんとWebマーケティングに関する週に1度のミーティング。16:00軽い休息を取る。16:15Facebookに上げる記事を作成する。18:00退社。', style: 'width: 100%;height: 300px;' %>
+          </div>
+          <div style="margin: 8px 0">
+            <%=f.label :身に着けられるスキル%>
+            <%= f.text_area :review_skills, placeholder:"・マネジメントスキル：インターン生の雇用やマネジメントを経験し、インターン生にどうやって効率よく働いてもらえるか、成果を最大化できるかを考えて動けるようになった。", style: 'width: 100%;height: 300px;' %>
+          </div>
+          <div style="margin: 8px 0">
+            <%=f.label :教育体制・面倒見のよさ%>
+            会社にインターン生を受け入れる体制が整っているか、社員とどのようなかかわりがあるのか、研修等があれば、研修プログラムの詳細を教えてください。
+            <%= f.text_area :review_training,placeholder:"1対1で先輩にメンターについてもらっている。常に隣で話しながら仕事ができるため、フィードバックを受ける機会がかなり多い。一定のレベルになれば自立的に仕事を進めてゆく。", style: 'width: 100%;height: 300px;' %>
+          </div>
+          <div style="margin: 8px 0">
+            <%=f.label :インターンの経験が、就職活動もしくは就職後に活きるか?%>
+            精神的・スキル的成長、業界を知る、人脈、採用などの観点から、どのようなインターン経験がどのようにして就職活動・就職後に活きると思うかを具体的に教えて下さい。
+            <%= f.text_area :review_merit, placeholder:"例)スキル的成長：マーケティング業務でSEOを向上させる経験は汎用性が高く、他社に入社しても使える能力である。・人脈：自分が志望していた業界であり、業界内での繋がりも強いということもあって、社員さんから他社の方を紹介してもらうことができた。結果、業界全体の理解が進んだ。",style: 'width: 100%;height: 300px;' %>
+          </div>
+          <div style="margin: 8px 0">
+            <%=f.label :教育体制・面倒見のよさ%>
+            <%= f.text_area :review_training,placeholder:"1対1で先輩にメンターについてもらっている。常に隣で話しながら仕事ができるため、フィードバックを受ける機会がかなり多い。一定のレベルになれば自立的に仕事を進めてゆく。", style: 'width: 100%;height: 300px;' %>
+          </div>
+          <div style="margin: 8px 0">
+            <%=f.label :インターンに期待していたこととその実態%>
+            元々期待をしていたことや志望した理由と、実際のインターンで行ったこととのギャップを、具体的に教えてください。
+            <%= f.text_area :review_expectation, style: 'width: 100%;height: 300px;' %>
+          </div>
+          <label>本口コミ投稿は完全匿名ですので、以下の情報は口コミに表示されません。
+          確認のメールを送信する際に使用されます。</label>
           <div class="row">
             <div class="col10 push1">
               <%= button_tag type: "submit", class: "btn btn--block" do %>
@@ -53,5 +158,4 @@
           <% end %>
 
         </article>
-      </div>
       <div id="yjSub">
