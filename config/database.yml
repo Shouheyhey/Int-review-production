@@ -29,16 +29,6 @@ test:
   password:
   socket: /tmp/mysql.sock
 
-staging:
-  <<: *default
-  adapter: mysql2
-  encoding: utf8
-  database: heroku_5f7e1e9f1f9590f
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
-
 production:
   adapter: mysql2
   encoding: utf8
