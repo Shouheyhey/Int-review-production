@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:kanji_name, :furigana_name,:birthday, :sex, :address, :university, :department, :culture_or_science,:graduation_year,:company, :others,:rate] )
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:kanji_name, :furigana_name,:birthday, :sex, :address, :university, :department, :culture_or_science,:graduation_year,:company, :others,:rate,:title,:occupation,:length,:often,:hourly_wage,:rate_flexibility,:rate_wage,:rate_future,:rate_growth,:rate_social,:rate_value,:rate_social,:review_training,:review_merit] )
   end
 
   def after_sign_out_path_for(resources)

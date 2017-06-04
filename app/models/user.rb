@@ -11,5 +11,19 @@ devise :database_authenticatable, :registerable,
   validates :address, presence: true
   validates :birthday, presence: true
 
+  validates :title, presence: true
+  validates :occupation, presence: true
+  validates :length, presence: true
+  validates :often, presence: true
+  validates :hourly_wage, presence: true
+  validates :rate_flexibility, presence: true
+  validates :rate_wage, presence: true
+  validates :rate_future, presence: true
+  validates :rate_growth, presence: true
+  validates :rate_social, presence: true
+  validates :rate_value, presence: true
+  validates :rate_social, presence: true
+  validates :review_training, presence: true,  length: { minimum: 50 }
+  validates :review_merit, presence: true,  length: { minimum: 50 }
 
 end

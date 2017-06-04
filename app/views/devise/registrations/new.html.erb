@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 
 document.addEventListener("turbolinks:load", function() {
   $('#tab-menu li').on('click', function(){
@@ -79,7 +79,6 @@ document.addEventListener("turbolinks:load", function() {
               <%= f.text_field :company, :placeholder => '会社名を記入してください'%>
       </div>
 
-
       <div>
             <%= f.label :その他の所属 %><br />
             <%= f.text_field :other, :placeholder => '所属名を記入してください'%>
@@ -99,5 +98,245 @@ document.addEventListener("turbolinks:load", function() {
         <% end %>
       </div>
     </div>
+  </div>
+</div> -->
+
+<script>
+
+document.addEventListener("turbolinks:load", function() {
+  $('#tab-menu li').on('click', function(){
+    if($(this).not('selected')){
+      // タブメニュー
+      $(this).addClass('selected').siblings('li').removeClass('selected');
+      // タブの中身
+      var index = $('#tab-menu li').index(this);
+      $('#tab-box div').eq(index).addClass('selected').siblings('div').removeClass('selected');
+    }
+  });
+});
+
+
+// document.addEventListener("turbolinks:load", function()){
+//   $('#parent_tab_menu').on('click', function()){
+//     if($(this).not('pointed')){
+//       $(this).addClass('pointed').siblings('li').removeClass('selected');
+//       var index =$('#parent_tab_menu').index(this);
+//       $('#parent_tab_box div').eq(index).addClass('selected').siblings('div').removeClass('pointed');
+//     }
+//   });
+// });
+
+</script>
+
+<div class="bgcolor-white pt1em pb1em" id="contents">  <div id="main_cnt_wrapper">
+  <div id="yjContentsBody">
+    <div class="yjContainer">
+      <div class="form_box">
+        <h2>Int.review<span>新規登録</span></h2>
+
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
+<br>
+<span><h3><strong>ユーザー情報登録</strong></h3></span>
+    <div id="parent_tab_box" class="label">
+      <div class="pointed">
+          <div class="label"><%= f.label :'氏名'%><br />
+          <%= f.text_field :kanji_name, autodocus:true, :placeholder => '氏名をフルネームで入力してください(＊必須)'%></div>
+
+          <div class="label"><%= f.label :'フリガナ'%><br />
+          <%= f.text_field :furigana_name,autocomplete: "off", :placeholder => '氏名をフリガナで入力してください(＊必須)' %></div>
+
+          <div class="label"><%= f.label :'メールアドレス(＊必須)' %><br />
+          <%= f.email_field :email, autofocus: true, placeholder: 'メールアドレスを入力(＊必須)' %></div>
+
+          <div class="label"><%= f.label :パスワード%> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+            <%= f.password_field :password, autocomplete: "off", placeholder: 'パスワードを入力(＊必須)' %></div>
+
+          <div class="label"><%= f.label :パスワードの確認 %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'パスワードを入力（確認）' %></div>
+
+          <div class="label"><%= f.label :生年月日 %><br />
+            <%== sprintf(
+            f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=>1930, :end_year => Time.now.year, :default =>'1990-1-1'.to_date), '年','月') + '日' %></div>
+
+          <div class="label"><%= f.label :性別 %><br />
+          <%= f.select :sex, ['男','女']%></div>
+
+          <div class="label"><%= f.label :住所%><br />
+          <%= f.text_field :address,  :placeholder => 'お住まいの都道府県名を入力してください'%></div>
+
+          <div class="label"><%= f.label :以下から所属を選択して記入してください%>
+
+          <div id="tab-menu" class="tab-menu label">
+            <ul>
+              <li class="selected"><p>大学生</p></li>
+              <li><p>社会人</p></li>
+              <li><p>その他</p></li>
+            </ul>
+
+        <div id ="tab-box" class="label">
+          <div class="selected">
+            <%= f.label :文理選択 %><br />
+            <%= f.select :culture_or_science, ['文系', '理系'] %>
+
+            <br /><%= f.label :大学%>
+            <%= f.text_field :university, :placeholder =>'大学名を入力してください(＊必須) '%>
+
+            <%= f.label :学部%><br />
+            <%= f.text_field :department, :placeholder => '在籍中の学部名を入力してください(＊必須) '%>
+
+            <%= f.label :卒業年%><br />
+            <%= f.text_field :graduation_year, :placeholder => '卒業される年度を記入してください(＊必須) '%>
+        </div>
+
+
+       <div>
+              <%= f.label :会社名 %><br />
+              <%= f.text_field :company, :placeholder => '会社名を記入してください'%>
+      </div>
+
+
+      <div>
+            <%= f.label :その他の所属 %><br />
+            <%= f.text_field :other, :placeholder => '所属名を記入してください'%>
+          </div>
+      </div>
+
+      <div id="main_cnt_wrapper">
+        <div id="yjContentsBody">
+          <br>
+          <div  style="text-align:center";}><h3><strong>インターン情報(必須)</strong></h3></div>
+                  <h5>インターン先の企業</h5>
+                  <%= f.text_field  :title %>
+                </div>
+                <br><div style="margin: 8px 0">
+                <h5>職種</h5>
+                  <%= f.text_field  :occupation, placeholder: 'エンジニア、マーケティング、営業、ビジネス全般など'%>
+                </div>
+                <br><div style="margin: 8px 0">
+                  <h5>インターン実施期間</h5>
+                  <%= f.select :length, ["1カ月未満","1カ月~2カ月","3カ月~6カ月","7カ月~11カ月","1年以上2年未満","2年以上"] %>
+                </div>
+                <br><div style="margin: 8px 0">
+                <h5>勤務頻度（週に何日参加したのかを記入してください。）,</h5>
+                  <%= f.select :often, ["週1日未満","週1日~２日","週3日~4日","週5日以上"] %>
+                </div>
+                <br><div style="margin: 8px 0">
+                  <h5>給与（時給換算で記入してください。）</h5>
+                  <%= f.select :hourly_wage, ["無給（交通費なし）","無給(交通費支給）","800円未満","800円~899円","1000円~1099円","1100円~1299円","1300円~1499円","1500円以上"] %>
+                </div>
+                <br><div style="margin: 8px 0">
+                  <h5>企業がシフトや就業日時に柔軟に対応してくれるか？</h5>
+                  <label><%= f.radio_button :rate_flexibility,'10'%>非常に柔軟</label>
+                  <br>
+                  <label><%= f.radio_button :rate_flexibility,'8' %>柔軟</label>
+                  <br>
+                  <label><%= f.radio_button :rate_flexibility,'6' %>普通</label>
+                  <br>
+                  <label><%= f.radio_button :rate_flexibility, '4' %>悪い</label>
+                  <br>
+                  <label><%= f.radio_button :rate_flexibility,'2'%>非常に悪い</label>
+                </div>
+                <br><div style="margin: 8px 0">
+                  <h5>給与に満足か？（交通費含む）</h5>
+                  <br>
+                  <label><%= f.radio_button :rate_wage,'10'%>非常に満足</label>
+                  <br>
+                  <label><%= f.radio_button :rate_wage,'8' %>不満</label>
+                  <br>
+                  <label><%= f.radio_button :rate_wage,'6' %>どちらともいえない</label>
+                  <br>
+                  <label><%= f.radio_button :rate_wage, '4' %>不満</label>
+                  <br>
+                  <label><%= f.radio_button :rate_wage,'2' %>非常に不満</label>
+                </div>
+                <br />
+                <br><div style="margin: 8px 0">
+                  <h5>インターン先に、将来性と成長度はあるか？</h5>
+                  <br>
+                  <label><%= f.radio_button :rate_future,'10'%>非常に高い</label>
+                  <br>
+                  <label><%= f.radio_button :rate_future,'8' %>高い</label>
+                  <br>
+                  <label><%= f.radio_button :rate_future,'6' %>普通</label>
+                  <br>
+                  <label><%= f.radio_button :rate_future, '4' %>低い</label>
+                  <br>
+                  <label><%= f.radio_button :rate_future,'2' %>非常に低い</label>
+                </div>
+                <br />
+                <br><div style="margin: 8px 0">
+                  <h5>どれくらい成長できるか？</h5>
+                  <label><%= f.radio_button :rate_growth,'10'%>非常に成長できる</label>
+                  <br>
+                  <label><%= f.radio_button :rate_growth,'8' %>成長できる</label>
+                  <br>
+                  <label><%= f.radio_button :rate_growth,'6' %>普通</label>
+                  <br>
+                  <label><%= f.radio_button :rate_growth, '4' %>あまり成長できない</label>
+                  <br>
+                  <label><%= f.radio_button :rate_growth,'2' %>全く成長できない</label>
+                </div>
+                <br />
+                <br><div style="margin: 8px 0">
+                <h5>社会に対して貢献したと、どの程度実感したか？</h5>
+                  <label><%= f.radio_button :rate_social,'10'%>強く実感した</label>
+                  <br>
+                  <label><%= f.radio_button :rate_social,'8' %>少し実感した</label>
+                  <br>
+                  <label><%= f.radio_button :rate_social,'6' %>どちらともいえない</label>
+                    <br>
+                    <label><%= f.radio_button :rate_social, '4' %>あまり実感しなかった</label>
+                    <br>
+                  <label><%= f.radio_button :rate_social,'2' %>全く実感しなかった</label>
+                </div>
+                <br />
+                <br><div style="margin: 8px 0">
+                  <h5>インターンの体験が、就職活動でどの程度活きるか?</h5>
+                  <br>
+                  <label><%= f.radio_button :rate_value,'10'%>非常に活きる</label>
+                  <br>
+                  <label><%= f.radio_button :rate_value,'8' %>活きる</label>
+                  <br>
+                  <label><%= f.radio_button :rate_value,'6' %>どちらともいえない</label>
+                  <br>
+                  <label><%= f.radio_button :rate_value, '4' %>活きない</label>
+                    <br>
+                  <label><%= f.radio_button :rate_value,'2' %>非常に活きない</label>
+                </div>
+                <br />
+                <br><div style="margin: 8px 0">
+                  <h5>親しい友人にどの程度すすめたいと思うか、0から10点で点数をつけてください</h5>
+                  <%= f.select :rate_social, ["1","2","3","4","5","6","7","8","9","10"] %>
+                </div>
+                <br />
+                <br><div style="margin: 8px 0">
+                  <h5>教育体制・面倒見のよさ<br>(50文字以上)</h5>
+                  <p>会社にインターン生を受け入れる体制が整っているか、社員とどのようなかかわりがあるのか、研修等があれば、研修プログラムの詳細を教えてください。</p>
+                  <%= f.text_area :review_training,placeholder:"1対1で先輩にメンターについてもらっている。常に隣で話しながら仕事ができるため、フィードバックを受ける機会がかなり多い。一定のレベルになれば自立的に仕事を進めてゆく。", style: 'width: 100%;height: 200px;' %>
+                </div>
+                <br />
+                <br><div style="margin: 8px 0">
+                  <h5>インターンの経験が、就職活動もしくは就職後に活きるか?<br>(50文字以上)</h5>
+                  <p>精神的・スキル的成長、業界を知る、人脈、採用などの観点から、どのようなインターン経験がどのようにして就職活動・就職後に活きると思うかを具体的に教えて下さい。</p>
+                  <%= f.text_area :review_merit, placeholder:"例)スキル的成長：マーケティング業務でSEOを向上させる経験は汎用性が高く、他社に入社しても使える能力である。・人脈：自分が志望していた業界であり、業界内での繋がりも強いということもあって、社員さんから他社の方を紹介してもらうことができた。結果、業界全体の理解が進んだ。",style: 'width: 100%;height: 200px;' %>
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col10 push1">
+                    <%= button_tag type: "submit", class: "btn btn--block" do %>
+                    登録する<i class="icon-arrow-right"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <br />
+
+
+          <div class="more_link_box">
+          <strong>すでにアカウントを持っていますか？</strong>
+          <%= render "devise/shared/links" %>
+          </div>
+        <% end %>
   </div>
 </div>
