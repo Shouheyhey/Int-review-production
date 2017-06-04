@@ -65,8 +65,6 @@ gem 'google-analytics-rails'
 
 gem 'omniauth'
 
-gem 'will_paginate'
-
 gem 'activerecord-session_store'
 
 end
