@@ -9,11 +9,11 @@ IntReviewProduct::Application.routes.draw do
   }
 
   get "pages/new_registration_notification"
-  get "pages/registration_question_1"
-  get "pages/registration_question_2"
-  get "pages/registration_question_3"
-  get "pages/registration_question_4"
-  get "pages/registration_question_5"
+  # get "pages/registration_question_1"
+  # get "pages/registration_question_2"
+  # get "pages/registration_question_3"
+  # get "pages/registration_question_4"
+  # get "pages/registration_question_5"
   resources :abouts, only: :index
   resources :terms, only: :index
   resources :users, only: :show

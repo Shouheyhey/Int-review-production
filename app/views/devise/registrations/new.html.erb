@@ -116,15 +116,6 @@ document.addEventListener("turbolinks:load", function() {
 });
 
 
-// document.addEventListener("turbolinks:load", function()){
-//   $('#parent_tab_menu').on('click', function()){
-//     if($(this).not('pointed')){
-//       $(this).addClass('pointed').siblings('li').removeClass('selected');
-//       var index =$('#parent_tab_menu').index(this);
-//       $('#parent_tab_box div').eq(index).addClass('selected').siblings('div').removeClass('pointed');
-//     }
-//   });
-// });
 
 </script>
 
@@ -189,7 +180,6 @@ document.addEventListener("turbolinks:load", function() {
             <%= f.label :卒業年%><br />
             <%= f.text_field :graduation_year, :placeholder => '卒業される年度を記入してください(＊必須) '%>
         </div>
-
 
        <div>
               <%= f.label :会社名 %><br />
@@ -331,7 +321,6 @@ document.addEventListener("turbolinks:load", function() {
                   </div>
                 </div>
                 <br />
-
 
           <div class="more_link_box">
           <strong>すでにアカウントを持っていますか？</strong>
