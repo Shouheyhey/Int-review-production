@@ -47,9 +47,22 @@
   text-align: center;
 }
 
+.centered_article_again{
+   margin:0 auto;
+  text-align: center;
+}
+
+.panel-default_again{
+    color: #3e98bb;
+    border-color: #ddd;
+   border-radius:3px;
+}
+
+
+
  .panel-default>.panel-heading {
      color: #333;
-     background-color: #f5f5f5;
+     background-color: #ebccd1;
      border-color: #ddd;
     border-radius:3px;
  }
@@ -71,7 +84,7 @@
     }
 
     .panel-default {
-        border-color: #ddd;
+        border-color: #ebccd1;
     }
 
 
