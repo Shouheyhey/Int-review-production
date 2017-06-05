@@ -1,3 +1,5 @@
+pages_notification_path(resource)
+
 <script>
 
 document.addEventListener("turbolinks:load", function() {
@@ -29,7 +31,6 @@ document.addEventListener("turbolinks:load", function() {
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
 <br>
-<span><h3><strong>ユーザー情報登録</strong></h3></span>
     <div id="parent_tab_box" class="label">
       <div class="pointed">
           <div class="label"><%= f.label :'氏名'%><br />
