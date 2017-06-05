@@ -65,4 +65,6 @@ gem 'activerecord-session_store'
 
 gem 'kaminari'
 
+gem 'google-analytics-rails'
+
 end
