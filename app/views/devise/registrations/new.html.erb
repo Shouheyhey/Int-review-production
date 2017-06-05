@@ -38,7 +38,18 @@ document.addEventListener("turbolinks:load", function() {
        js.src = "//connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
-  </script>
+
+
+        </script>
+
+        <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=117868708798240";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="bgcolor-white pt1em pb1em" id="contents">  <div id="main_cnt_wrapper">
   <div id="yjContentsBody">
@@ -237,8 +248,7 @@ document.addEventListener("turbolinks:load", function() {
                     <%= button_tag type: "submit", class: "btn btn--block" do %>
                     登録する<i class="icon-arrow-right"></i>
                     <% end %>
-                    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-                  </div>
+                    <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>                  </div>
                 </div>
                 <br />
 
