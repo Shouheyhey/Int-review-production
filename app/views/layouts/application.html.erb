@@ -32,6 +32,7 @@
       <%= csrf_meta_tags %>
     </meta>
   </head>
+  <%= analytics_init if Rails.env.production? %>
   <body class="yj950-2">
     <!-- Google Tag Manager (noscript) -->
     <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPMMHPM"
