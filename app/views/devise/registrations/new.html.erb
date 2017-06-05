@@ -1,106 +1,3 @@
-<!-- <script>
-
-document.addEventListener("turbolinks:load", function() {
-  $('#tab-menu li').on('click', function(){
-    if($(this).not('selected')){
-      // タブメニュー
-      $(this).addClass('selected').siblings('li').removeClass('selected');
-      // タブの中身
-      var index = $('#tab-menu li').index(this);
-      $('#tab-box div').eq(index).addClass('selected').siblings('div').removeClass('selected');
-    }
-  });
-});
-
-</script>
-
-<div class="bgcolor-white pt1em pb1em" id="contents">  <div id="main_cnt_wrapper">
-  <div id="yjContentsBody">
-    <div class="yjContainer">
-      <div class="form_box">
-        <h2>Int.review<span>新規登録</span></h2>
-
-
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                  <%= devise_error_messages! %>
-
-          <div class="label"><%= f.label :'氏名'%><br />
-          <%= f.text_field :kanji_name, autodocus:true, :placeholder => '氏名をフルネームで入力してください(＊必須)'%></div>
-
-          <div class="label"><%= f.label :'フリガナ'%><br />
-          <%= f.text_field :furigana_name,autocomplete: "off", :placeholder => '氏名をフリガナで入力してください(＊必須)' %></div>
-
-          <div class="label"><%= f.label :'メールアドレス(＊必須)' %><br />
-          <%= f.email_field :email, autofocus: true, placeholder: 'メールアドレスを入力(＊必須)' %></div>
-
-          <div class="label"><%= f.label :パスワード%> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-            <%= f.password_field :password, autocomplete: "off", placeholder: 'パスワードを入力(＊必須)' %></div>
-
-          <div class="label"><%= f.label :パスワードの確認 %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'パスワードを入力（確認）' %></div>
-
-          <div class="label"><%= f.label :生年月日 %><br />
-            <%== sprintf(
-            f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=>1930, :end_year => Time.now.year, :default =>'1990-1-1'.to_date), '年','月') + '日' %></div>
-
-          <div class="label"><%= f.label :性別 %><br />
-          <%= f.select :sex, ['男','女']%></div>
-
-          <div class="label"><%= f.label :住所%><br />
-          <%= f.text_field :address,  :placeholder => 'お住まいの都道府県名を入力してください'%></div>
-
-          <div class="label"><%= f.label :以下から所属を選択して記入してください%>
-
-          <div id="tab-menu" class="tab-menu label">
-            <ul>
-              <li class="selected"><p>大学生</p></li>
-              <li><p>社会人</p></li>
-              <li><p>その他</p></li>
-            </ul>
-
-        <div id ="tab-box" class="label">
-          <div class="selected">
-            <%= f.label :文理選択 %><br />
-            <%= f.select :culture_or_science, ['文系', '理系'] %>
-
-            <br /><%= f.label :大学%>
-            <%= f.text_field :university, :placeholder =>'大学名を入力してください(＊必須) '%>
-
-            <%= f.label :学部%><br />
-            <%= f.text_field :department, :placeholder => '在籍中の学部名を入力してください(＊必須) '%>
-
-            <%= f.label :卒業年%><br />
-            <%= f.text_field :graduation_year, :placeholder => '卒業される年度を記入してください(＊必須) '%>
-        </div>
-
-
-       <div>
-              <%= f.label :会社名 %><br />
-              <%= f.text_field :company, :placeholder => '会社名を記入してください'%>
-      </div>
-
-      <div>
-            <%= f.label :その他の所属 %><br />
-            <%= f.text_field :other, :placeholder => '所属名を記入してください'%>
-          </div>
-      </div>
-
-
-          <div class="submit">
-          <div class="actions">
-          <%= f.submit %>
-          </div></div>
-
-          <div class="more_link_box">
-          <strong>すでにアカウントを持っていますか？</strong>
-          <%= render "devise/shared/links" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <script>
 
 document.addEventListener("turbolinks:load", function() {
@@ -116,7 +13,6 @@ document.addEventListener("turbolinks:load", function() {
 });
 
 
-
 </script>
 
     <!-- Google Tag Manager (noscript) -->
@@ -129,17 +25,9 @@ document.addEventListener("turbolinks:load", function() {
     <div class="yjContainer">
       <div class="form_box">
         <h2>Int.review<span>新規登録</span></h2>
-        <!--
-        <div class="centered_article_again" style="width:48%;">
-        <div class="panel-default">
-          <div class="panel-heading">
-                  <h4><div class="panel-title"><strong>注意</strong></div></div></h4>
-                  <div class="panel" style="background-color:#fff; border-radius:3px;"><p>口コミを閲覧するには、以下のフォームから<br>ユーザー登録と口コミ投稿を完了してください。</p></div>
-          </div>
-    </div> -->
 
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                  <%= devise_error_messages! %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
 <br>
 <span><h3><strong>ユーザー情報登録</strong></h3></span>
     <div id="parent_tab_box" class="label">
@@ -197,8 +85,6 @@ document.addEventListener("turbolinks:load", function() {
               <%= f.label :会社名 %><br />
               <%= f.text_field :company, :placeholder => '会社名を記入してください'%>
       </div>
-
-
       <div>
             <%= f.label :その他の所属 %><br />
             <%= f.text_field :other, :placeholder => '所属名を記入してください'%>
