@@ -67,4 +67,7 @@ gem 'kaminari'
 
 gem 'google-analytics-rails'
 
+gem 'omniauth-facebook'
+
+
 end
