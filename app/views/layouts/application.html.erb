@@ -23,43 +23,41 @@
     </script>
   </head>
 
-<div id="wrapper">
-  <div id="yjContentsHeader">
-    <nav class="globalnav">
-      <div class="globalnav__menu">
-        <ul class="gmenu">
-          <li class="logo header" style="float:left;absolute;">
-            <a href="/" >Int.review</a>
-          </li>
-        <li class="search header" style="float:left;position:absolute;top:15px;left:150px;">
-            <%= form_tag('/products/search', method: :get) do %>
-            <input class="search__query header" name="keyword" placeholder="企業名で検索" type="text" value=""><button class="btn-search header" title="検索" type="submit"><i class="icon-search header"></i></button></input>
-            <% end %>
-          <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
-          </form>
-        </li>
-        <li class="entry_button" style="float:right">
-        <%= link_to '新規登録', "/users/sign_up"%>
-        </li>
-        <li class="entry_button" style="float:right">
-          <%= link_to 'ログイン', "/users/sign_in"%>
-      </li>
-        <li class="entry_button" style="float:right">
-          <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
-        <li class="entry_button  " style="float:right;">
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <!-- <header>
-    <img src="http://intreview.raindrop.jp/wp-content/themes/lighthouse/images/headers/snow-mountains.png">
-  </header> -->
   <body class="yj950-2">
     <!-- Google Tag Manager (noscript) -->
     <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPMMHPM"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
+    <div id="wrapper">
+      <div id="yjContentsHeader">
+        <nav class="globalnav">
+          <div class="globalnav__menu">
+            <ul class="gmenu">
+              <li class="logo" style="float: left ">
+                <a href="/">int.review</a>
+              </li>
+              <li class="search header" style="float:left;position:absolute;top:15px;left:150px;">
+                  <%= form_tag('/products/search', method: :get) do %>
+                  <input class="search__query header" name="keyword" placeholder="企業名で検索" type="text" value=""><button class="btn-search header" title="検索" type="submit"><i class="icon-search header"></i></button></input>
+                  <% end %>
+                <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
+                </form>
+              </li>
+              <li class="entry_button" style="float:right">
+              <%= link_to '新規登録', "/users/sign_up"%>
+              </li>
+              <li class="entry_button" style="float:right">
+                <%= link_to 'ログイン', "/users/sign_in"%>
+            </li>
+              <li class="entry_button" style="float:right">
+                <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
+              <li class="entry_button  " style="float:right;">
+                </li>
+
+            </ul>
+          </div>
+        </nav>
+      </div>
 
             <% if notice %>
               <p class="alert alert-success"><%= notice %></p>
@@ -68,52 +66,7 @@
               <p class="alert alert-danger"><%= alert %></p>
             <% end %>
 
-  <div class="bgcolor-white pt1em pb1em" id="contents">
-    <%= yield %>
-      <aside class="section">
-        <h4 class="text-small hr-bottom--thin no-space-bottom">
-          <i class="icon-crown color-gray-light"></i>インターン評価ランキング
-        </h4>
-        <ul class="listview listview--condensed text-small">
-          <% @ranking.each.with_index(1) do |product, i| %>
-          <li data-cinema-id="346394">
-            <a href="/products/<%= product.id %>">
-              <div class="box">
-                <div class="box__cell w40 align-center">
-                  <p class="label bgcolor-gray-lighter align-center">
-                    <%= i %>
-                  </p>
-                </div>
-                <div class="box__cell pl1em">
-                  <p class="text-xsmall no-space">
-                    <%= product.title %>
-                  </p>
-                  <img src="<%= product.image_url %>" alt="">
-                </div>
-              </div>
-            </a>
-          </li>
-          <% end %>
-        </ul>
-      </aside>
-    </div>
-  </div>
-</div>
-</div>
-  </div>
-</div>
-</body>
+            <%= yield %>
 
-<footer>
-<div class="globalnav__footer" id="footer">
-    <ul>
-        <ls class="entry_button"><a href="/terms" style="float:middle">利用規約</ls></a>
-        <ls class="entry_button"><a href="/abouts" style="float:middle">"イントレ"について</ls></a>
-        <ls class="entry_button"><a href="/" style="float:middle">お問い合わせ</ls></a>
-    </ul>
-    <div class="copyright">
-      Copyright (C) 2017 株式会社イントレ All Rights Reserved.
-    </div>
-</div>
-</footer>
+</body>
 </html>
