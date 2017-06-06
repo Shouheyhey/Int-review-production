@@ -8,6 +8,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: block;
 }
 
+aside{
+  float:right;
+}
 
 .footer_white {
   overflow: hidden;

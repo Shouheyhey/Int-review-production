@@ -17,10 +17,6 @@ IntReviewProduct::Application.routes.draw do
       get 'search'
   end
 end
-  resources :reviews, only: [:new, :create] do
-    collection do
-      get 'search'
-    end
-end
+  resources :reviews, only: [:new, :create]
   root 'products#index'
 end
