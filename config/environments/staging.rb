@@ -1,3 +1,4 @@
+staging
 IntReviewProduct::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # Code is not reloaded between requests.
@@ -75,5 +76,21 @@ IntReviewProduct::Application.configure do
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
+
+  # Use default logging formatter so that PID and timestamp are not suppressed.
+  config.log_formatter = ::Logger::Formatter.new
+
+config.action_mailer.default_url_options = {host: 'http://int-review.jp/' }
+  config.action_mailer.raise_delivery_errors = false #この一文も追記!!
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :user_name => "app69354248@heroku.com",
+      :password => "pokqqpby6815",
+      :domain => "heroku.com",
+      :address => "smtp.sendgrid.net",
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
 
 end
