@@ -160,6 +160,8 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     rack (1.6.8)
+    rack-mini-profiler (0.10.5)
+      rack (>= 1.2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -252,6 +254,7 @@ DEPENDENCIES
   omniauth-facebook
   paperclip
   pry-rails
+  rack-mini-profiler
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 4.0.2)
