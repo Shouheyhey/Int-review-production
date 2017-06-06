@@ -1,166 +1,165 @@
-<head>
-  <link rel="canonical" href="https://www.int-review.jp/products">
-</head>
+<div id="main_cnt_wrapper">
+  <div id="yjContentsBody">
+    <div class="yjContainer">
+      <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
+      <div id="yjMain">
+        <div class="breadcrumb"><span class="glyphicon glyphicon-home"></span><a href="/">Int.reviewトップ</a>><a href=""><%= @product.title %>の口コミ</a></span>
+        </div>
 
-    <div id="yjContentsBody">
-      <div class="yjContainer">
-        <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="https://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
-        <div id="yjMain"><span class="breadcrumb .icon-home" style="text:small;"><a href="/">Int.reviewトップ</a>><a href=""><%= @product.title %>の口コミ</a></span>
-          <article class="section">
-            <div class="container">
-              <header class="header header--section">
-                <h2 class="text-middle">
+        <article class="section">
+          <div class="container">
+            <header class="header header--section">
+              <h2 class="text-middle">
 
 
-            <div class="resume">
-              <header class="page-header">
-              <h1 class="page-title"><%= @product.title %></h1>
-              <h1 class="page-title"></h1>
+          <div class="resume">
+            <header class="page-header">
+            <h1 class="page-title"><%= @product.title %></h1>
+            <h1 class="page-title"></h1>
+          </header>
+
+          </div>
+              </h2>
             </header>
 
-            </div>
-                </h2>
-              </header>
-
-              <header class="header header--section">
-                <h3 style="color: #3b5998;">
-                みんなの総合評価
+            <header class="header header--section">
+              <h3 style="color: #3b5998;">
+              みんなの総合評価
+            </h3>
+                     <span class="rating-star">
+                     <i class="star-actived rate-<%= @product.review_average %>0"></i>
+                     </span>
+            </header>
+            <header class="header header--section">
+              <h3 style="color: #3b5998;">
+              会社情報
+            </h3>
+            </header>
+            <ul style="padding: 0">
+              <p> <%= @product.detail %>
+              </p>
+            </ul>
+            <header class="header header--section">
+              <h3 style="color: #3b5998;">みんなの口コミ
               </h3>
-                       <span class="rating-star">
-                       <i class="star-actived rate-<%= @product.review_average %>0"></i>
-                       </span>
-              </header>
-              <header class="header header--section">
-                <h3 style="color: #3b5998;">
-                会社情報
-              </h3>
-              </header>
-              <ul style="padding: 0">
-                <p> <%= @product.detail %>
-                </p>
-              </ul>
-              <header class="header header--section">
-                <h3 style="color: #3b5998;">みんなの口コミ
-                </h3>
-              </header>
-              <!-- <div class="button-list">
-              <ul class="button_list">
-                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-                <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-              </ul>
-            </div> -->
-              <ul style="padding: 0">
-              <% @product.reviews.each do |review| %>
-                  <div class="thumbnail__caption">
-                    <div class="alert alert-info" role="alert">
-                      <div><h3>ID:<%= review.user_id%></h3>総合評価:</div>
-                        <span class="rating-star"><i class="star-actived rate-<%= review.rate%>0"></i></span>
-                    </div>
-
-
-                    <div class="bs-callout bs-callout-danger">
-                      <h4>インターンの概要</h4>
-                      <table class="table table-striped table-responsive ">
-                        <thead>
-                          <tr><th>職種</th>
-                          <th>インターン期間</th>
-                          <th>１週間の勤務頻度</th>
-                          <th>時給</th>
-                        </tr></thead>
-                        <tbody>
-                          <tr>
-                            <td><%= review.occupation%></td>
-                            <td><%= review.length%></td>
-                            <td><%= review.often%></td>
-                            <td><%= review.hourly_wage%></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="bs-callout bs-callout-danger">
-                      <h4>項目別の評価</h4>
-                      <ul class="list-group">
-                        <a class="list-group-item inactive-link" href="#">
-                          <h5 class="list-group-item-heading">
-                            シフトや就業日時の柔軟度
-                          </h5>
-                          <span class="rating-star"><i class="star-actived rate-<%= review.rate_flexibility%>0"></i></span>
-                          <h5 class="list-group-item-heading">
-                            給与への満足度（交通費含む）
-                          </h5>
-                          <span class="rating-star"><i class="star-actived rate-<%= review.rate_wage%>0"></i></span>
-                          <h5 class="list-group-item-heading">
-                            インターン先の将来性と成長度
-                          </h5>
-                          <span class="rating-star"><i class="star-actived rate-<%= review.rate_future%>0"></i></span>
-                          <h5 class="list-group-item-heading">
-                            インターンを通じての自己成長度
-                          </h5>
-                          <span class="rating-star"><i class="star-actived rate-<%= review.rate_growth%>0"></i></span>
-                          <h5 class="list-group-item-heading">
-                            インターンを通しての社会貢献の実感度
-                          </h5>
-                          <span class="rating-star"><i class="star-actived rate-<%= review.rate_social%>0"></i></span>
-                          <h5 class="list-group-item-heading">
-                            インターン経験が就活で活きる度
-                          </h5>
-                          <span class="rating-star"><i class="star-actived rate-<%= review.rate_value%>0"></i></span>
-                          <h5 class="list-group-item-heading">
-                            友人にオススメする度
-                          </h5>
-                          <span class="rating-star"><i class="star-actived rate-<%= review.rate_reccommendation%>0"></i></span>
-                        </a>
-                      </ul>
-                    </div>
-
-                    <div class="bs-callout bs-callout-danger text-middle" id="job_cont">
-                      <h4>業務内容</h4>
-                    <p></span><%= review.review_job%><small 2014=""></small></p>
+            </header>
+            <!-- <div class="button-list">
+            <ul class="button_list">
+              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
+            </ul>
+          </div> -->
+            <ul style="padding: 0">
+            <% @product.reviews.each do |review| %>
+                <div class="thumbnail__caption">
+                  <div class="alert alert-info" role="alert">
+                    <div><h3>ID:<%= review.user_id%></h3>総合評価:</div>
+                      <span class="rating-star"><i class="star-actived rate-<%= review.rate%>0"></i></span>
                   </div>
-                  </header>
-                  <header>
-                    <div class="bs-callout bs-callout-danger text-middle" id ="authority">
-                    <h4>与えられている裁量・権限</h4>
-                    <p></span><%= review.review_authority%><small 2014=""></small></p>
+
+
+                  <div class="bs-callout bs-callout-danger">
+                    <h4>インターンの概要</h4>
+                    <table class="table table-striped table-responsive ">
+                      <thead>
+                        <tr><th>職種</th>
+                        <th>インターン期間</th>
+                        <th>１週間の勤務頻度</th>
+                        <th>時給</th>
+                      </tr></thead>
+                      <tbody>
+                        <tr>
+                          <td><%= review.occupation%></td>
+                          <td><%= review.length%></td>
+                          <td><%= review.often%></td>
+                          <td><%= review.hourly_wage%></td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  </header>
-                  <header>
-                    <div class="bs-callout bs-callout-danger text-middle" id="skill">
-                      <h4>身につけられるスキル</h4>
-                    <p></span><%= review.review_skills%><small 2014=""></small></p>
-                  </header>
-                  <header>
-                    <div class="bs-callout bs-callout-danger text-middle" id="training">
-                      <h4>教育体制・面倒見のよさ</h4>
-                    <p></span><%= review.review_training%><small 2014=""></small></p>
-                  </header>
-                  <header>
-                    <div class="bs-callout bs-callout-danger text-middle" id="environment">
-                    <h4>労働・オフィス環境や雰囲気</h4>
-                    <p></span><%= review.review_environment%><small 2014=""></small></p>
-                  </header>
-                  <header>
-                    <div class="bs-callout bs-callout-danger text-middle" id="expectation">
-                      <h4>インターンに期待していたこととその実態</h4>
-                    <p></span><%= review.review_expectation%><small 2014=""></small></p>
-                  </header>
-                  <header>
-                    <div class="bs-callout bs-callout-danger text-middle" id="merit">
-                      <h4>このインターンをするメリット</h4>
-                    <p></span><%= review.review_merit%><small 2014=""></small></p>
-                  </header>
+
+                  <div class="bs-callout bs-callout-danger">
+                    <h4>項目別の評価</h4>
+                    <ul class="list-group">
+                      <a class="list-group-item inactive-link" href="#">
+                        <h5 class="list-group-item-heading">
+                          シフトや就業日時の柔軟度
+                        </h5>
+                        <span class="rating-star"><i class="star-actived rate-<%= review.rate_flexibility%>0"></i></span>
+                        <h5 class="list-group-item-heading">
+                          給与への満足度（交通費含む）
+                        </h5>
+                        <span class="rating-star"><i class="star-actived rate-<%= review.rate_wage%>0"></i></span>
+                        <h5 class="list-group-item-heading">
+                          インターン先の将来性と成長度
+                        </h5>
+                        <span class="rating-star"><i class="star-actived rate-<%= review.rate_future%>0"></i></span>
+                        <h5 class="list-group-item-heading">
+                          インターンを通じての自己成長度
+                        </h5>
+                        <span class="rating-star"><i class="star-actived rate-<%= review.rate_growth%>0"></i></span>
+                        <h5 class="list-group-item-heading">
+                          インターンを通しての社会貢献の実感度
+                        </h5>
+                        <span class="rating-star"><i class="star-actived rate-<%= review.rate_social%>0"></i></span>
+                        <h5 class="list-group-item-heading">
+                          インターン経験が就活で活きる度
+                        </h5>
+                        <span class="rating-star"><i class="star-actived rate-<%= review.rate_value%>0"></i></span>
+                        <h5 class="list-group-item-heading">
+                          友人にオススメする度
+                        </h5>
+                        <span class="rating-star"><i class="star-actived rate-<%= review.rate_reccommendation%>0"></i></span>
+                      </a>
+                    </ul>
                   </div>
-                </li>
-                <% end %>
-              </ul>
-            </div>
-          </article>
-        </div>
+
+                  <div class="bs-callout bs-callout-danger text-middle" id="job_cont">
+                    <h4>業務内容</h4>
+                  <p></span><%= review.review_job%><small 2014=""></small></p>
+                </div>
+                </header>
+                <header>
+                  <div class="bs-callout bs-callout-danger text-middle" id ="authority">
+                  <h4>与えられている裁量・権限</h4>
+                  <p></span><%= review.review_authority%><small 2014=""></small></p>
+                </div>
+                </header>
+                <header>
+                  <div class="bs-callout bs-callout-danger text-middle" id="skill">
+                    <h4>身につけられるスキル</h4>
+                  <p></span><%= review.review_skills%><small 2014=""></small></p>
+                </header>
+                <header>
+                  <div class="bs-callout bs-callout-danger text-middle" id="training">
+                    <h4>教育体制・面倒見のよさ</h4>
+                  <p></span><%= review.review_training%><small 2014=""></small></p>
+                </header>
+                <header>
+                  <div class="bs-callout bs-callout-danger text-middle" id="environment">
+                  <h4>労働・オフィス環境や雰囲気</h4>
+                  <p></span><%= review.review_environment%><small 2014=""></small></p>
+                </header>
+                <header>
+                  <div class="bs-callout bs-callout-danger text-middle" id="expectation">
+                    <h4>インターンに期待していたこととその実態</h4>
+                  <p></span><%= review.review_expectation%><small 2014=""></small></p>
+                </header>
+                <header>
+                  <div class="bs-callout bs-callout-danger text-middle" id="merit">
+                    <h4>このインターンをするメリット</h4>
+                  <p></span><%= review.review_merit%><small 2014=""></small></p>
+                </header>
+                </div>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </article>
       </div>
-    </div>
-  </div>
-</div>
+
+
+      <div id="yjSub">
