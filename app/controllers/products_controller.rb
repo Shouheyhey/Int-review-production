@@ -2,7 +2,7 @@ class ProductsController < RankingController
   # 検索した後のページ、もしくは投稿ページに遷移する前に、ログインしてなければログインページに遷移するbefore action
   # before_action :authenticate_user!, only: :show
   def index
-    @products = Product.order('id ASC').per_page_kaminari(params[:page]).per(6)
+    @products = Product.order('id ASC').per_page_kaminari(params[:page]).per(10)
         # productsテーブルから最新順に作品を２０件取得する
   end
 

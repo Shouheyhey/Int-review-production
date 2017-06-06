@@ -1,90 +1,25 @@
- <!DOCTYPE html>
-
-<html class="pc" lang="ja" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#">
-  <head>
-    <meta name="google-site-verification" content="ifq8gL0P0Uywa-L-CsZ0By4a1IMWOeJNcKN8U_0SLB4"/>
-    <meta charset="utf-8">
-        <title>長期・有給インターンシップの口コミ・評判｜イントレビュー</title>
-      <meta name=“description” content="日本初の長期・有給インターンシップ口コミ・評判サイト。インターン経験者による口コミで、あなたに合った長期・有給インターンが探せる。リクルートからDeNAなどのベンチャー、スタートアップインターンまで体験談多数！">
-      <meta property=“og:title” content='イントレビュー - 長期・有給インターンシップの口コミ・評判｜イントレビュー'>
-      <meta name=“twitter:title” content='イントレビュー - 長期・有給インターンシップの口コミ・評判｜イントレビュー'>
-      <meta name=“twitter:description” content=“日本初の長期・有給インターンシップ口コミ・評判サイト。インターン経験者による口コミで、あなたに合った長期・有給インターンが探せる。リクルートからDeNAなどのベンチャー、スタートアップインターンまで体験談多数！“>
-      <link href='https://fonts.googleapis.com/css?family=Signika:700,300,400,600' rel='stylesheet' type='text/css'>
-      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-      <%= csrf_meta_tags %>
-    </meta>
-  </head>
-  <body class="yj950-2 clearfix">
-    <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPMMHPM"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-    <!-- End Google Tag Manager (noscript) -->
-    <div id="wrapper">
-      <div id="yjContentsHeader">
-        <nav class="globalnav">
-          <div class="globalnav__menu">
-            <ul class="gmenu">
-              <li class="logo header" style="float:left;absolute;">
-                <a href="/" >Int.review</a>
-              </li>
-            <li class="search header" style="float:left;position:absolute;top:15px;left:150px;">
-                <%= form_tag('/products/search', method: :get) do %>
-                <input class="search__query header" name="keyword" placeholder="企業名で検索" type="text" value=""><button class="btn-search header" title="検索" type="submit"><i class="icon-search header"></i></button></input>
-                <% end %>
-              <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
-              </form>
-            </li>
-            <li class="entry_button" style="float:right">
-            <%= link_to '新規登録', "/users/sign_up"%>
-            </li>
-            <li class="entry_button" style="float:right">
-              <%= link_to 'ログイン', "/users/sign_in"%>
-          </li>
-            <li class="entry_button" style="float:right">
-              <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
-            <li class="entry_button  " style="float:right;">
-              </li>
-            </ul>
+<aside class="section">
+  <h4 class="text-small hr-bottom--thin no-space-bottom">
+    <i class="icon-crown color-gray-light"></i>インターン評価ランキング
+  </h4>
+  <ul class="listview listview--condensed text-small">
+    <% @ranking.each.with_index(1) do |product, i| %>
+    <li data-cinema-id="346394">
+      <a href="/products/<%= product.id %>">
+        <div class="box">
+          <div class="box__cell w40 align-center">
+            <p class="label bgcolor-gray-lighter align-center">
+              <%= i %>
+            </p>
           </div>
-        </nav>
-      </div>
-      <!-- <header>
-        <img src="http://intreview.raindrop.jp/wp-content/themes/lighthouse/images/headers/snow-mountains.png">
-      </header> -->
-      <div class="bgcolor-white pt1em pb1em" id="contents">
-        <%= yield %>
-          <aside class="section">
-            <h4 class="text-small hr-bottom--thin no-space-bottom">
-              <i class="icon-crown color-gray-light"></i>インターン評価ランキング
-            </h4>
-            <ul class="listview listview--condensed text-small">
-              <% @ranking.each.with_index(1) do |product, i| %>
-              <li data-cinema-id="346394">
-                <a href="/products/<%= product.id %>">
-                  <div class="box">
-                    <div class="box__cell w40 align-center">
-                      <p class="label bgcolor-gray-lighter align-center">
-                        <%= i %>
-                      </p>
-                    </div>
-                    <div class="box__cell pl1em">
-                      <p class="text-xsmall no-space">
-                        <%= product.title %>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <% end %>
-            </ul>
-          </aside>
+          <div class="box__cell pl1em">
+            <p class="text-xsmall no-space">
+              <%= product.title %>
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-      </div>
-    </div>
-  </body>
-
-</html>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</aside>
