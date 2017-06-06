@@ -69,5 +69,6 @@ gem 'google-analytics-rails'
 
 gem 'omniauth-facebook'
 
+gem 'rack-mini-profiler'
 
 end
