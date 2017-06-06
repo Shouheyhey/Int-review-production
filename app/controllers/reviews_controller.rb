@@ -1,4 +1,4 @@
-class ReviewsController < RankingController
+class ReviewsController < ApplicationController
   # 新しいレビュー作成時
   # before_action :authenticate_user!, only: :new
   def new
