@@ -21,6 +21,9 @@
       <%= csrf_meta_tags %>
     </meta>
 
+    <script type="text/javascript" src="./footerFixed.js"></script>
+
+
   </head>
   <body class="yj950-2 clearfix">
     <!-- Google Tag Manager (noscript) -->
@@ -33,7 +36,7 @@
           <div class="globalnav__menu">
             <ul class="gmenu">
               <li class="logo header" style="float:left;absolute;">
-                <a href="/" >Int.review</a>
+                <%= link_to 'Int.review', "/", method: :get%>
               </li>
             <li class="search header" style="float:left;position:absolute;top:15px;left:150px;">
                 <%= form_tag('/products/search', method: :get) do %>
@@ -43,10 +46,10 @@
               </form>
             </li>
             <li class="entry_button" style="float:right">
-            <%= link_to '新規登録', "/users/sign_up"%>
+            <%= link_to '新規登録', "/users/sign_up",method: :get %>
             </li>
             <li class="entry_button" style="float:right">
-              <%= link_to 'ログイン', "/users/sign_in"%>
+              <%= link_to 'ログイン', "/users/sign_in", method: :get%>
           </li>
             <li class="entry_button" style="float:right">
               <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
@@ -97,7 +100,7 @@
         <ul>
             <ls class="entry_button"><a href="/terms" style="float:middle">利用規約</ls></a>
             <ls class="entry_button"><a href="/abouts" style="float:middle">"イントレ"について</ls></a>
-            <ls class="entry_button"><a href="/" style="float:middle">お問い合わせ</ls></a>
+            <ls class="entry_button"><a href="https://goo.gl/forms/dL8g8nG8kJRizuei2" style="float:middle">お問い合わせ</ls></a>
         </ul>
         <div class="copyright">
           Copyright (C) 2017 株式会社イントレ All Rights Reserved.
