@@ -22,17 +22,12 @@
                     <div class="bs-callout bs-callout-danger"  style="padding-bottom: 40px;">
                               <table class="table table-striped table-responsive ">
                                 <thead>
-                                  <h2 class="text-xlarge">
-                                    <div class="links" data-no-turbolink>
-                                  <%= link_to product.title, product_path(product.id)%>
-                                </h2>
-                                </div>
+                                    <h2 class="text-xlarge">
+                                      <%= link_to product.title, product_path(product.id),:"data-no-turbolink" => true %>
+                                    </h2>
                                     <!-- <a href="/products/<%= product.id %>" title="<%= product.title %>" style="float:right;">
                                         <i class="icon-chevron-right color-sub"></i>
                                     </a> -->
-                                    <div class="links" data-no-turbolink>
-                                    <%link_to "product.title", "/products/product.id"%>
-                                  </div>
                                       <div class="position-right p1em">
                                         <i class="icon-chevron-right color-sub"></i>
                                       </div>
@@ -51,8 +46,8 @@
                                         <% end %>
                               </thead>
                               </table>
-                              <div class="margin" data-no-turbolink>
-                              <a style="color:black;" href="/products/<%=product.id %>">
+                              <div class="margin">
+                              <a style="color:black;" href="/products/<%=product.id %>" data-no-turbolink>
                             <p class = "col10 text-overflow text-xsmall"><%=product.detail%></p></a>
                           </div>
                           </div>
