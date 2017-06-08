@@ -1,3 +1,15 @@
+<script type="text/javascript">
+document.addEventListener('turbolinks:load', function() {
+  $('#tab-menu li').on('click', function(){
+    if($(this).not('selected')){
+      $(this).addClass('selected').siblings('li').removeClass('selected');
+      var index = $('#tab-menu li').index(this);
+      $('#tab-box div').eq(index).addClass('selected').siblings('div').removeClass('selected');
+    }
+  });
+});
+</script>
+
 <head>
   <link rel="canonical" href="https://www.int-review.jp/users/sign_up">
 </head>
