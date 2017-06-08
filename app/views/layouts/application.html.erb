@@ -41,11 +41,10 @@
                 <%= link_to 'Int.review', "/", method: :get%>
               </li>
             <li class="search header" style="float:left;position:absolute;top:15px;left:150px;">
-                <%= form_tag('/products/search', method: :get) do %>
-                <input class="search__query header" name="keyword" placeholder="企業名で検索" type="text" value=""><button class="btn-search header" title="検索" type="submit"><i class="icon-search header"></i></button></input>
-                <% end %>
-              <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
-              </form>
+              <form action='/products/search'>
+              <input class="search__query header" name="keyword" placeholder="企業名で検索" type="text" value=""><button class="btn-search header" title="検索" type="submit"><i class="icon-search header"></i></button></input>
+            <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
+            </form>
             </li>
             <% if user_signed_in? %>
             <li class="entry_button" style="float:right">
