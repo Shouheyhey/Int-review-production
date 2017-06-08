@@ -55,7 +55,8 @@ gem 'paperclip'
 
 gem 'lazy_high_charts'
 
-gem 'jquery-turbolinks'
+# gem 'jquery-turbolinks'
+
 group :production do
  gem 'rails_12factor'
 
