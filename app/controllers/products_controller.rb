@@ -1,5 +1,5 @@
-class ProductsController < RankingController
-  layout 'application', only: :show 
+class ProductsController < ApplicationController
+  layout 'application', only: :show
   before_action :"ranking"
   # 検索した後のページ、もしくは投稿ページに遷移する前に、ログインしてなければログインページに遷移するbefore action
   # before_action :authenticate_user!, only: :show
