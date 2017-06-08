@@ -7,7 +7,6 @@ IntReviewProduct::Application.routes.draw do
     :unlocks=>'users/unlocks',
     :omniauth_callbacks=>'users/omniauth_callbacks'
   }
-
   get "pages/new_registration_notification"
   resources :abouts, only: :index
   resources :terms, only: :index
