@@ -43,15 +43,7 @@
               <h3 style="color: #3b5998;">みんなの口コミ
               </h3>
             </header>
-            <!-- <div class="button-list">
-            <ul class="button_list">
-              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-              <li><button type="button" style="list-style:none;" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button></li>
-            </ul>
-          </div> -->
+
             <ul style="padding: 0">
             <% @product.reviews.each do |review| %>
                 <div class="thumbnail__caption">
@@ -117,6 +109,7 @@
                     </ul>
                   </div>
 
+
                   <div class="bs-callout bs-callout-danger text-middle" id="job_cont">
                     <h4>業務内容</h4>
                   <p></span><%= review.review_job%><small 2014=""></small></p>
@@ -163,3 +156,6 @@
 
 
       <div id="yjSub">
+
+</div>
+</body>

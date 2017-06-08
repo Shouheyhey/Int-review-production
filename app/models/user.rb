@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 has_many :reviews
 devise :database_authenticatable, :registerable,
-       :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
+       :recoverable, :rememberable, :trackable, :validatable,  :omniauthable
 
   validates :kanji_name, presence: true
   validates :furigana_name, presence: true
@@ -15,7 +15,6 @@ devise :database_authenticatable, :registerable,
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
    user.email = auth.info.email
    user.password = Devise.friendly_token[0,20]
-   user.name = auth.info.kanji_name # assuming the user model has a name
       # If you are using confirmable and the provider(s) you use validate emails,
    # uncomment the line below to skip the confirmation emails.
    user.skip_confirmation!

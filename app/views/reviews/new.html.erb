@@ -2,34 +2,14 @@
   <div id="yjContentsBody">
     <div class="yjContainer">
       <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="https://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
-      <div id="yjMain">
-        <article class="section">
-          <div class="container">
+
+        <%if user_signed_in?%>
+
             <header class="header header--section">
               <h2 class="text-middle">
-                <i class="icon-movie color-gray-light"></i>投稿
+                口コミ新規投稿
               </h2>
             </header>
-            <div>
-              <ul class="listview js-lazy-load-images">
-                <li style="margin-bottom: 15px">
-                    <div class="box">
-                      <div class="box__cell w80">
-                        <div class="thumbnail thumbnail--photo">
-                        </div>
-                      </div>
-                      <div class="box__cell pl1em">
-                        <h3 class="text-middle text-break color-sub">
-                        </h3>
-                        <p class="text-xsmall">
-                        </p>
-                        <p class="text-xsmall opacity-60"></p>
-                      </div>
-                    </div>
-                </li>
-              </ul>
-            </div>
-          </div>
 
           <%= form_for [@review] do |f| %>
           <div style="margin: 8px 0">
@@ -115,35 +95,60 @@
             <label><%= f.radio_button :rate_social,'9' %>9</label>
             <label><%= f.radio_button :rate_social,'10'%>10</label>
           </div>
-          <div style="margin: 8px 0">
-            <%=f.label :与えられている裁量・権限%>
-            あなたがインターン中にどのくらいの裁量権を与えられたのかを教えてください。
-            <%= f.text_area :review_job,placeholder:'社員の方と同程度の裁量を与えられた。私は、自社メディアのfacebookマーケティングを担当したが、ターゲット選定から広告予算まで私自らの手で決めることができた。裁量に関しては、他社のインターンよりもかなり大きいものになっていると感じた。' ,style: 'width: 100%;height: 300px;' %>
+
+          <div class="accordion">与えられている裁量・権限</div>
+          <div class="panel_review">
+            <div style="margin: 8px 0">
+              <%=f.label :与えられている裁量・権限%>
+              あなたがインターン中にどのくらいの裁量権を与えられたのかを教えてください。
+              <%= f.text_area :review_job,placeholder:'社員の方と同程度の裁量を与えられた。私は、自社メディアのfacebookマーケティングを担当したが、ターゲット選定から広告予算まで私自らの手で決めることができた。裁量に関しては、他社のインターンよりもかなり大きいものになっていると感じた。' ,style: 'width: 100%;height: 300px;' %>
+            </div>
           </div>
-          <div style="margin: 8px 0">
-            <%=f.label :業務内容%><br>
-            一日の流れを、具体的な業務内容と時間と共にお書き下さい。
-            <%= f.text_area :review_authority, placeholder:'09:00出社。09:05昨日のfacebook広告の結果をチェック・分析する。10:30新たなfacebook広告を作成し、出稿。12:00社員さんと昼ごはん。13:00Google Analyticsを用いて、サイトに来たユーザーの動きを確認し、ユーザーの回遊時間を長くする施策を考える。15:00社員さんとWebマーケティングに関する週に1度のミーティング。16:00軽い休息を取る。16:15Facebookに上げる記事を作成する。18:00退社。', style: 'width: 100%;height: 300px;' %>
+
+          <div class="accordion">業務内容</div>
+          <div class="panel_review">
+            <div style="margin: 8px 0">
+              <%=f.label :業務内容%><br>
+              一日の流れを、具体的な業務内容と時間と共にお書き下さい。
+              <%= f.text_area :review_authority, placeholder:'09:00出社。09:05昨日のfacebook広告の結果をチェック・分析する。10:30新たなfacebook広告を作成し、出稿。12:00社員さんと昼ごはん。13:00Google Analyticsを用いて、サイトに来たユーザーの動きを確認し、ユーザーの回遊時間を長くする施策を考える。15:00社員さんとWebマーケティングに関する週に1度のミーティング。16:00軽い休息を取る。16:15Facebookに上げる記事を作成する。18:00退社。', style: 'width: 100%;height: 300px;' %>
+            </div>
           </div>
-          <div style="margin: 8px 0">
-            <%=f.label :身に着けられるスキル%>
-            <%= f.text_area :review_skills, placeholder:"・マネジメントスキル：インターン生の雇用やマネジメントを経験し、インターン生にどうやって効率よく働いてもらえるか、成果を最大化できるかを考えて動けるようになった。", style: 'width: 100%;height: 300px;' %>
+
+          <div class="accordion">身に着けられるスキル</div>
+          <div class="panel_review">
+            <div style="margin: 8px 0">
+              <%=f.label :身に着けられるスキル%>
+              <%= f.text_area :review_skills, placeholder:"・マネジメントスキル：インターン生の雇用やマネジメントを経験し、インターン生にどうやって効率よく働いてもらえるか、成果を最大化できるかを考えて動けるようになった。", style: 'width: 100%;height: 300px;' %>
           </div>
-          <div style="margin: 8px 0">
-            <%=f.label :教育体制・面倒見のよさ%>
-            会社にインターン生を受け入れる体制が整っているか、社員とどのようなかかわりがあるのか、研修等があれば、研修プログラムの詳細を教えてください。
-            <%= f.text_area :review_training,placeholder:"1対1で先輩にメンターについてもらっている。常に隣で話しながら仕事ができるため、フィードバックを受ける機会がかなり多い。一定のレベルになれば自立的に仕事を進めてゆく。", style: 'width: 100%;height: 300px;' %>
+            </div>
+
+          <div class="accordion">教育体制・面倒見のよさ</div>
+          <div class="panel_review">
+            <div style="margin: 8px 0">
+              <%=f.label :教育体制・面倒見のよさ%>
+              会社にインターン生を受け入れる体制が整っているか、社員とどのようなかかわりがあるのか、研修等があれば、研修プログラムの詳細を教えてください。
+              <%= f.text_area :review_training,placeholder:"1対1で先輩にメンターについてもらっている。常に隣で話しながら仕事ができるため、フィードバックを受ける機会がかなり多い。一定のレベルになれば自立的に仕事を進めてゆく。", style: 'width: 100%;height: 300px;' %>
+            </div>
+            </div>
+
+          <div class="accordion">インターンの経験が、就職活動もしくは就職後に活きるか</div>
+          <div class="panel_review">
+            <div style="margin: 8px 0">
+              <%=f.label :インターンの経験が、就職活動もしくは就職後に活きるか?%>
+              精神的・スキル的成長、業界を知る、人脈、採用などの観点から、どのようなインターン経験がどのようにして就職活動・就職後に活きると思うかを具体的に教えて下さい。
+              <%= f.text_area :review_merit, placeholder:"例)スキル的成長：マーケティング業務でSEOを向上させる経験は汎用性が高く、他社に入社しても使える能力である。・人脈：自分が志望していた業界であり、業界内での繋がりも強いということもあって、社員さんから他社の方を紹介してもらうことができた。結果、業界全体の理解が進んだ。",style: 'width: 100%;height: 300px;' %>
+            </div>
           </div>
-          <div style="margin: 8px 0">
-            <%=f.label :インターンの経験が、就職活動もしくは就職後に活きるか?%>
-            精神的・スキル的成長、業界を知る、人脈、採用などの観点から、どのようなインターン経験がどのようにして就職活動・就職後に活きると思うかを具体的に教えて下さい。
-            <%= f.text_area :review_merit, placeholder:"例)スキル的成長：マーケティング業務でSEOを向上させる経験は汎用性が高く、他社に入社しても使える能力である。・人脈：自分が志望していた業界であり、業界内での繋がりも強いということもあって、社員さんから他社の方を紹介してもらうことができた。結果、業界全体の理解が進んだ。",style: 'width: 100%;height: 300px;' %>
+
+          <div class="accordion">インターンに期待していたこととその実態</div>
+          <div class="panel_review">
+            <div style="margin: 8px 0">
+              <%=f.label :インターンに期待していたこととその実態%>
+              元々期待をしていたことや志望した理由と、実際のインターンで行ったこととのギャップを、具体的に教えてください。
+              <%= f.text_area :review_expectation, style: 'width: 100%;height: 300px;' %>
+            </div>
           </div>
-          <div style="margin: 8px 0">
-            <%=f.label :インターンに期待していたこととその実態%>
-            元々期待をしていたことや志望した理由と、実際のインターンで行ったこととのギャップを、具体的に教えてください。
-            <%= f.text_area :review_expectation, style: 'width: 100%;height: 300px;' %>
-          </div>
+
           <label>本口コミ投稿は完全匿名ですので、以下の情報は口コミに表示されません。
           確認のメールを送信する際に使用されます。</label>
           <div class="row">
@@ -153,7 +158,56 @@
               <% end %>
             </div>
           </div>
+
+
+          <script>
+          var acc = document.getElementsByClassName("accordion");
+          var i;
+
+          for (i = 0; i < acc.length; i++) {
+              acc[i].onclick = function(){
+                  this.classList.toggle("active");
+                  var panel_review = this.nextElementSibling;
+                  if (panel_review.style.display === "block") {
+                      panel_review.style.display = "none";
+                  } else {
+                      panel_review.style.display = "block";
+                  }
+              }
+          }
+          </script>
           <% end %>
 
-        </article>
+
+<%else%>
+<article>
+<div id="main_cnt_wrapper">
+  <div id="yjContentsBody">
+    <div class="yjContainer">
+      <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
+      <span class="breadcrumb .icon-home" style="text:small;"><a href="/">Int.reviewトップ</a>><a href="">ログイン確認画面</a></span>
+
+    <div class="static_page">
+      <div class="centered_article"style="width:70%;">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">投稿をするには、ユーザー登録が必須となります。</h4>
+        </div>
+        <a href="/users/sign_up",method: :get><button type="button" class="btn btn-default">新規登録画面へ</button></a>
+        <a href="/"><button type="button" class="btn btn-default">口コミ一覧へ戻る</button></a>
+      </div>
+     </div>
+   </div>
+ </div>
+ </div>
+ </div>
+ </article>
+</div>
+</div>
+</div>
+
+
+<%end%>
+
+
       <div id="yjSub">

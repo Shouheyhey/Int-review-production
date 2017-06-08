@@ -1,14 +1,14 @@
 class ReviewsController < RankingController
   # 新しいレビュー作成時
   # before_action :authenticate_user!, only: :new
+  layout "wide", only: [:new, :create]
+
   def new
     @review = Review.new
   end
 
   def create
-    # Review.create(create_params)
     Review.create(create_params)
-    # トップページにリダイレクトする
     redirect_to controller: :products, action: :index
   end
 
@@ -18,7 +18,7 @@ class ReviewsController < RankingController
 
   private
   def create_params
-    params.require(:review).permit(:rate, :review, :occupation, :length, :often, :hourly_wage, :rate_flexibility, :rate_wage, :rate_future,:rate_growth, :rate_social, :rate_value, :rate_reccommendation, :review_job, :review_skills, :review_merit, :review_authority, :review_training, :review_environment, :review_expectation)
+    params.require(:review).permit(:product_id, :user_id,:rate, :review, :occupation, :length, :often, :hourly_wage, :rate_flexibility, :rate_wage, :rate_future,:rate_growth, :rate_social, :rate_value, :rate_reccommendation, :review_job, :review_skills, :review_merit, :review_authority, :review_training, :review_environment, :review_expectation)
 end
 
 end

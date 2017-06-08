@@ -1,4 +1,5 @@
-document.addEventListener 'turbolinks:load', (event) ->
-  if typeof ga is 'function'
-    ga('set', 'location', event.data.url)
-    ga('send', 'pageview')
+# $(document).on 'turbolinks:load', ->
+#   if window.ga != undefined
+#     ga('set', 'location', location.href.split('#')[0])
+#     ga('send', 'pageview')
+# 
