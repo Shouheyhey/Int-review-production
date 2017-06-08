@@ -1,3 +1,344 @@
 // Place all the styles related to the ranking controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ div.accordion {
+     background-color: #eee;
+     color: #444;
+     cursor: pointer;
+     padding: 18px;
+     width: 100%;
+     border: none;
+     text-align: left;
+     outline: none;
+     font-size: 15px;
+     transition: 0.4s;
+ }
+
+ div.accordion.active, div.accordion:hover {
+     background-color: #ddd;
+ }
+
+ div.panel_review {
+     padding: 0 18px;
+     display: none;
+     background-color: white;
+ }
+
+
+ #footer {
+   bottom:0px;
+   width:100%;
+ }
+
+ .btn {
+     display: inline-block;
+     font-weight: 400;
+     line-height: 1.25;
+     text-align: center;
+     white-space: nowrap;
+     vertical-align: middle;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     border: 1px solid transparent;
+     padding: .5rem 1rem;
+     font-size: 1rem;
+     border-radius: .25rem;
+     -webkit-transition: all .2s ease-in-out;
+     -o-transition: all .2s ease-in-out;
+     transition: all .2s ease-in-out;
+ }
+
+ .btn-primary {
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+}
+
+.static_page{
+  width:100%;
+}
+
+.centered_article{
+  padding-top:10%;
+  margin:0 auto;
+  text-align: center;
+}
+
+.centered_article_again{
+   margin:0 auto;
+  text-align: center;
+}
+
+.panel-default_again{
+    color: #3e98bb;
+    border-color: #ddd;
+   border-radius:3px;
+}
+
+
+
+ .panel-default>.panel-heading {
+     color: #333;
+     background-color: #d9edf7;
+     border-color: #ddd;
+    border-radius:3px;
+ }
+
+ .panel-heading {
+     padding: 10px 15px;
+     border-bottom: 1px solid transparent;
+     border-top-left-radius: 3px;
+     border-top-right-radius: 3px;
+ }
+
+  .panel {
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+      box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+
+    .panel-default {
+        border-color: #d9edf7;
+    }
+
+
+
+ .bs-glyphicons .glyphicon {
+     margin-top: 5px;
+     margin-bottom: 10px;
+     font-size: 24px;
+ }
+
+ .glyphicon {
+     position: relative;
+     top: 1px;
+     display: inline-block;
+     font-family: 'Glyphicons Halflings';
+     font-style: normal;
+     font-weight: 400;
+     line-height: 1;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+ }
+
+ .button_list{
+  float:left;
+ }
+
+ .label-default {
+     background-color: #5bc0de;
+ }
+
+ .alert-info {
+     color: #31708f;
+     background-color: #d9edf7;
+     border-color: #bce8f1;
+ }
+ .alert {
+     padding: 15px;
+     margin-bottom: 20px;
+     border: 1px solid transparent;
+     border-radius: 4px;
+ }
+
+.tab-menu ul {
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.tab-menu li {
+  display: inline-block;
+  width: 32%;
+  height: 22px;
+  cursor: pointer;
+  background-color: #81D0FE;
+  font-size: 14px;
+  color: #fff;
+  border-top-right-radius:5px;
+  border-top-left-radius:5px;
+  text-align: center;
+}
+
+.tab-menu li.selected {
+  background-color: #fff;
+  color: #81D0FE;
+}
+
+.contents {
+  height: 360px;
+  padding: 20px;
+}
+
+#tab-box div{
+  display: none;
+}
+#tab-box div.selected {
+  display: block;
+  -webkit-animation: anime1 2s ease;
+}
+
+/* uses font awesome for social icons */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+.page-header{
+  text-align: center;
+}
+
+/*social buttons*/
+.btn-social{
+  color: white;
+  opacity:0.9;
+}
+.btn-social:hover {
+  color: white;
+    opacity:1;
+}
+.btn-facebook {
+background-color: #3b5998;
+opacity:0.9;
+}
+.btn-twitter {
+background-color: #00aced;
+opacity:0.9;
+}
+.btn-linkedin {
+background-color:#0e76a8;
+opacity:0.9;
+}
+.btn-github{
+  background-color:#000000;
+  opacity:0.9;
+}
+.btn-google {
+  background-color: #c32f10;
+  opacity: 0.9;
+}
+.btn-stackoverflow{
+  background-color: #D38B28;
+  opacity: 0.9;
+}
+
+/* resume stuff */
+
+.bs-callout {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eee;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px 1px 1px 5px;
+    margin-bottom: 5px;
+    padding: 20px;
+}
+.bs-callout:last-child {
+    margin-bottom: 0px;
+}
+.bs-callout h4 {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.bs-callout-danger {
+    border-left-color: #3b5998
+;
+}
+
+.bs-callout-danger h4{
+    color: #3b5998
+;
+}
+
+.resume .list-group-item:first-child, .resume .list-group-item:last-child{
+  border-radius:0;
+}
+
+/*makes an anchor inactive(not clickable)*/
+.inactive-link {
+   pointer-events: none;
+   cursor: default;
+}
+
+.resume-heading .social-btns{
+  margin-top:15px;
+}
+.resume-heading .social-btns i.fa{
+  margin-left:-5px;
+}
+
+
+
+@media (max-width: 992px) {
+  .resume-heading .social-btn-holder{
+    padding:5px;
+  }
+}
+
+
+/* skill meter in resume. copy pasted from http://bootsnipp.com/snippets/featured/progress-bar-meter */
+
+.progress-bar {
+    text-align: left;
+  white-space: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.progress-bar > .progress-type {
+  padding-left: 10px;
+}
+
+.progress-meter {
+  min-height: 15px;
+  border-bottom: 2px solid rgb(160, 160, 160);
+  margin-bottom: 15px;
+}
+
+.progress-meter > .meter {
+  position: relative;
+  float: left;
+  min-height: 15px;
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgb(160, 160, 160);
+}
+
+.progress-meter > .meter-left {
+  border-left-width: 2px;
+}
+
+.progress-meter > .meter-right {
+  float: right;
+  border-right-width: 2px;
+}
+
+.progress-meter > .meter-right:last-child {
+  border-left-width: 2px;
+}
+
+.progress-meter > .meter > .meter-text {
+  position: absolute;
+  display: inline-block;
+  bottom: -20px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 0.85em;
+  color: rgb(160, 160, 160);
+  text-align: left;
+}
+
+.progress-meter > .meter.meter-right > .meter-text {
+  text-align: right;
+}
