@@ -10,8 +10,8 @@
       <meta name=“twitter:description” content=“日本初の長期・有給インターンシップ口コミ・評判サイト。インターン経験者による口コミで、あなたに合った長期・有給インターンが探せる。リクルートからDeNAなどのベンチャー、スタートアップインターンまで体験談多数！“>
       <link href='https://fonts.googleapis.com/css?family=Signika:700,300,400,600' rel='stylesheet' type='text/css'>
 
-      <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track' => true %>
-       <%= javascript_include_tag 'application','data-turbolinks-track' => true %>
+      <%= stylesheet_link_tag    'application', media: 'all'%>
+       <%= javascript_include_tag 'application'%>
       <%= csrf_meta_tags %>
     </meta>
 
@@ -25,6 +25,8 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-100338312-1', 'auto');
+      ga('send', 'pageview');
+
     </script>
     <%end%>
   </head>
