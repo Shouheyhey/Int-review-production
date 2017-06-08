@@ -2,7 +2,15 @@
 <html class="pc" lang="ja" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#">
   <head>
     <% if Rails.env.production? %>
-    <%render partial: 'shared/analytics'%>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-100338312-1', 'auto');
+
+    </script>
       <%end%>
     <meta name="google-site-verification" content="ifq8gL0P0Uywa-L-CsZ0By4a1IMWOeJNcKN8U_0SLB4"/>
     <meta charset="utf-8">
@@ -12,8 +20,9 @@
       <meta name=“twitter:title” content='イントレビュー - 長期・有給インターンシップの口コミ・評判｜イントレビュー'>
       <meta name=“twitter:description” content=“日本初の長期・有給インターンシップ口コミ・評判サイト。インターン経験者による口コミで、あなたに合った長期・有給インターンが探せる。リクルートからDeNAなどのベンチャー、スタートアップインターンまで体験談多数！“>
       <link href='https://fonts.googleapis.com/css?family=Signika:700,300,400,600' rel='stylesheet' type='text/css'>
-      <%= stylesheet_link_tag    "application", media: "all" %>
-      <%= javascript_include_tag "application" %>
+
+      <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track' => true %>
+       <%= javascript_include_tag 'application','data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
     </meta>
 
