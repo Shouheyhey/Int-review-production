@@ -76,4 +76,6 @@ gem 'ransack'
 
 gem 'rails4-autocomplete'
 
+gem 'google-analytics-turbolinks'
+
 end

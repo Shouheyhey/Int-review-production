@@ -72,6 +72,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     google-analytics-rails (1.1.0)
+    google-analytics-turbolinks (0.0.5)
     hash-deep-merge (0.1.1)
     hashie (3.5.5)
     hike (1.2.3)
@@ -253,6 +254,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   google-analytics-rails
+  google-analytics-turbolinks
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
