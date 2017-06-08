@@ -23,7 +23,7 @@
                               <table class="table table-striped table-responsive ">
                                 <thead>
                                     <h2 class="text-xlarge">
-                                      <%= link_to product.title, product_path(product.id),:"data-no-turbolink" => true %>
+                                      <%= link_to product.title, product_path(product.id),data: { no_turbolink: true }%>
                                     </h2>
                                     <!-- <a href="/products/<%= product.id %>" title="<%= product.title %>" style="float:right;">
                                         <i class="icon-chevron-right color-sub"></i>
@@ -46,8 +46,8 @@
                                         <% end %>
                               </thead>
                               </table>
-                              <div class="margin">
-                              <a style="color:black;" href="/products/<%=product.id %>" data-no-turbolink>
+                              <div class="margin" data-turbolinks="false">
+                              <a style="color:black;" href="/products/<%=product.id %>">
                             <p class = "col10 text-overflow text-xsmall"><%=product.detail%></p></a>
                           </div>
                           </div>
